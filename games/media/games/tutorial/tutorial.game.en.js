@@ -29,20 +29,20 @@ undum.game.slideUpSpeed = 500
 /* The situations that the game can be in. Each has a unique ID. */
 undum.game.situations = {
     start: new undum.SimpleSituation(
-        "<h1>Starting Out with Undum</h1>\
+        "<h1>Hora de comer</h1>\
         <img src='media/games/tutorial/woodcut1.png' class='float_right'>\
-        <p>Welcome to the Undum tutorial. Undum is a tool for writing\
-        hypertext interactive fiction. It has some unique features\
-        and a visual design that encourages narrative games.</p>\
+        <p>Son las dos de la tarde, una hora menos en Canarias. Estás exhausto\
+        tras una maratoniana jornada de trabajo implementando la práctica 2 de\
+        Desarrollo Ágil</p>\
         \
-        <p>Hypertext interactive fiction is the digital equivalent of the\
-        Choose Your Own Adventure (CYOA) books that were popular in the\
-        1980s. The story is told in chunks, and you select from a range\
-        of options to move it forward. Unlike the book form, however, the\
-        digital form gives you far more flexibility to tell rich stories\
-        and introduce more interesting game elements.</p>\
+        <p>Vas a la cocina y decides demostrar tus dotes de chef realizando\
+        unos macarrones con tomate.</p>\
         \
-        <p class='transient'>Click <a href='hub'>this link to\
+        <p>Tras cocer los macarrones y echarlos en la sarten. ¡Sorpresa! \
+        no hay tomate frito. Toma de deciciones: \
+        <a href='./one-time-action' class='once'>this link</a></p>\
+        \
+        <p class='transient'>Toma de deciciones: <a href='hub'>this link to\
         continue...</a></p>"
     ),
 
