@@ -4,8 +4,7 @@
     "\\games",
     "\\games\\media",
     "\\games\\media\\games",
-    "\\games\\media\\games\\tutorial",
-    "\\games\\media\\js"
+    "\\games\\media\\games\\tutorial"
   ],
   "SelectedNode": "\\games\\media\\games\\tutorial\\tutorial.game.en.js",
   "PreviewInSolutionExplorer": false

@@ -31,19 +31,15 @@ undum.game.situations = {
     start: new undum.SimpleSituation(
         "<h1>Hora de comer</h1>\
         <img src='media/games/tutorial/woodcut1.png' class='float_right'>\
-        <p>Son las dos de la tarde, una hora menos en Canarias. Estás exhausto\
-        tras una maratoniana jornada de trabajo implementando la práctica 2 de\
-        Desarrollo Ágil</p>\
+        <p>Son las dos de la tarde, una hora menos en Canarias. Est\u00E1s exhausto\
+        tras una maratoniana jornada de trabajo implementando la pr\u00E1ctica 2 de\
+        Desarrollo \u00C1gil</p>\
         \
         <p>Vas a la cocina y decides demostrar tus dotes de chef realizando\
         unos macarrones con tomate.</p>\
         \
-        <p>Tras cocer los macarrones y echarlos en la sarten. ¡Sorpresa! \
-        no hay tomate frito. Toma de deciciones: \
-        <a href='./one-time-action' class='once'>this link</a></p>\
-        \
-        <p class='transient'>Toma de deciciones: <a href='hub'>this link to\
-        continue...</a></p>"
+        <p>Tras cocer los macarrones y echarlos en la sarten. \u00A1Sorpresa! \
+        no hay <a href='hub'>tomate frito.</a>"
     ),
 
     // NB: The 'hub' situation which is the main list of topics, is
@@ -59,7 +55,7 @@ undum.game.situations = {
             system.write($("#s_situations").html());
         },
         tags: ["topic"],
-        optionText: "What Undum Games are Made Of",
+        optionText: "Comer otra cosa",
         displayOrder: 1
     }),
     todo: new undum.SimpleSituation(
@@ -131,7 +127,7 @@ undum.game.situations = {
         about these links.\
         Let's return to the <a href='hub'>topic list</a>.</p>",
         {
-            heading: "Disappearing Content",
+            heading: "Comer macarrones sin tomate",
             diplayOrder: 2,
             tags: ["topic"]
         }
@@ -176,7 +172,7 @@ undum.game.situations = {
         {
             tags: ["topic"],
             displayOrder: 3,
-            heading: "Different Kinds of Links"
+            heading: "Ir a comprar tomate frito"
         }
     ),
     oneshot: new undum.SimpleSituation(
@@ -221,7 +217,7 @@ undum.game.situations = {
         by carrying out <a href='./skill-boost'>this action</a> as many\
         times as you like.</p>",
         {
-            heading: "Qualities and the Character",
+            heading: "Macarrones con ketchup",
             tags: ["topic"],
             displayOrder: 4,
             actions: {
@@ -301,7 +297,7 @@ undum.game.situations = {
         bar appear and animate below.</p>",
         {
             tags: ["topic"],
-            heading: "Showing a Progress Bar",
+            heading: "Showing a Progress Bara",
             displayOrder: 5,
             actions: {
                 // I'm going indirect here - the link carries out an
@@ -485,5 +481,5 @@ undum.game.init = function(character, system) {
     character.qualities.luck = 0;
     character.qualities.novice = 1;
     character.qualities.inspiration = 0;
-    system.setCharacterText("<p>You are starting on an exciting journey.</p>");
+    system.setCharacterText("<p></p>");
 };
