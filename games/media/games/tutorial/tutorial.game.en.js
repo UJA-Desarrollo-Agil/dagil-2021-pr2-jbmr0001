@@ -97,35 +97,16 @@ undum.game.situations = {
         }
     ),
     links: new undum.SimpleSituation(
-        "<p>Between each chunk of new text, Undum inserts a discreet line\
-        in the margin. This allows you to see at a glance everything that\
-        has been output as a result of your last click.\
-        It is particularly useful for small devices, or when\
-        lots of content has appeared. The window also scrolls so the start\
-        of the new content is as near to the top of the window as possible.\
-        This is also designed to help you read more naturally.</p>\
+        "<p>Aunque tienes mucha hambre te sale más rentable ir <a href='sticky'>ir de compras</a>. Además\
+        de paso te das un paseo </p>\
+        para abrir tu mente y seguir trabajando la práctica de Desarrollo Ágil esta tarde. \
+        <p></p>\
         \
-        <p>If you've been watching carefully, you will have noticed that\
-        parts of the text have been disappearing when you move between\
-        situations. This isn't a bug! One of the aims of Undum is to give\
-        game designers the ability to make the transcript of\
-        the game read as a coherent piece of narrative. However, you often\
-        need chunks of text that do nothing but offer the reader choices.\
-        Undum defines a special CSS class to add to your HTML for this\
-        (remember generated content is just HTML). It is <em>transient</em>,\
-        and can be applied to paragraphs, <em>div</em>s, or just\
-        <em>span</em>s<span class='transient'> (such as this one)</span>.</p>\
-        \
-        <p>You may also have noticed that, when you move situations, all the\
-        links in the previous situation turn into regular text. This is to\
-        stop you backtracking and trying previous options when you've already\
-        committed to one. In other H-IF systems, this is\
-        done by completely removing the content from previous pages.\
-        That prevents you going back and reading your story, however.</p>\
+        <p></p>\
         \
         <p class='transient'>The 'Different Kinds of Links' topic has more\
         about these links.\
-        Let's return to the <a href='hub'>topic list</a>.</p>",
+        </p>",
         {
             heading: "Comer macarrones sin tomate",
             diplayOrder: 2,
@@ -133,46 +114,19 @@ undum.game.situations = {
         }
     ),
     sticky: new undum.SimpleSituation(
-        "<p>There are three types of link in Undum. The first two we've seen\
-        in previous topics:\
-        links to change situation and links to carry out an action. When you\
-        include a link in your output, Undum parses it and wires it up\
-        correctly. If you create a link with a HTML <em>href</em> attribute\
-        containing just a name ('ballroom', for\
-        example) this will send the character to the situation with that\
-        name. Links\
-        with two components ('ballroom/view-painting', for example) send\
-        the character to a new situation <em>and then</em> carry out the\
-        named action ('view-painting' in this case). To carry out an action\
-        in the current situation, you can replace the situation name with a\
-        dot (so it would be './view-painting'). In all cases, if the\
-        character is already in that situation, then the situation's\
-        <em>enter</em> method won't be called again.</p>\
+        "<p>Parece una buena decisión. Intentas asegurarte de \
+        no olvidar las llaves ni la cartera antes de calir de casa.\
+        </p>\
         \
         <img src='media/games/tutorial/woodcut2.png' class='float_left'>\
-        <p>The third type of link, then, is a general hyperlink. If your\
-        link doesn't consist of a single element or pair of elements, as\
-        above, then Undum will guess that you have a normal hyperlink. As\
-        <a href='http://news.bbc.co.uk' class='sticky'>in this link</a>.\
-        If you have a link that <em>does</em> look like an Undum link, you\
-        can still force Undum not to interpret it as an action or situation\
-        move, by adding the CSS class <em>raw</em> to the HTML <em>a</em> tag.\
-        links that don't have the <em>raw</em> class, but that are considered\
-        to be non-Undum links (like the link above), will have <em>raw</em>\
-        added to them before display. This could allow you to style external\
-        links differently, as we have done here.</p>\
+        <p>Cierras la puerta y te diriges en dirección carrefour/chino/día</p>\
+        <a href='sticky'>dirijes hacia el supermercado</a>\
         \
-        <p>In the last situation I said you can prevent links from being\
-        turned into regular text when you move situations. This is done\
-        by another CSS class: <em>sticky</em>. When you\
-        <a href='oneshot'>leave this situation</a>, you'll notice the\
-        external link stays active. This can allow you to have options that\
-        stay valid throughout the narrative, for example, such as a spell to\
-        teleport home.</p>",
+        <p></p>",
         {
             tags: ["topic"],
             displayOrder: 3,
-            heading: "Ir a comprar tomate frito"
+            heading: "Salir de compras"
         }
     ),
     oneshot: new undum.SimpleSituation(
@@ -193,6 +147,7 @@ undum.game.situations = {
         <p class='transient'>After you've clicked the link, let's\
         <a href='hub'>move on</a>.</p>",
         {
+        heading: "FUERA DE CASA",
             actions: {
                 "one-time-action": "<p>As I said, one time actions are\
                                    mostly used to describe something in\
@@ -203,19 +158,13 @@ undum.game.situations = {
         }
     ),
     qualities: new undum.SimpleSituation(
-        "<p>Let's talk about the character.\
-        The character is described by a series of <em>qualities</em>. These\
-        are numeric values that can describe anything from natural abilities\
-        to how much of a resource the character controls. Qualities are\
-        shown in the box on the right of the text.</p>\
+        "<p>Pese a parecer un atentado contra la salud pública\
+        parece una buena solución. Sin embargo recuerdas que casualemte\
+        no te gusta el ketchup.</p>\
         \
-        <p>The qualities there are those you started the game with. When you\
-        <a href='quality-types'>go to the next situation</a>, keep your\
-        eyes on the character panel. You'll notice I'll give you a boost to\
-        your stamina quality. This process is animated and highlighted to\
-        draw your attention to it. You could also get a boost of skill\
-        by carrying out <a href='./skill-boost'>this action</a> as many\
-        times as you like.</p>",
+        <p>Piensas que deberías\
+        <a href='hub'>tomar otra decisión</a>, keep your\
+        </p>",
         {
             heading: "Macarrones con ketchup",
             tags: ["topic"],
@@ -296,7 +245,7 @@ undum.game.situations = {
         way in the character panel. But you will also see a progress\
         bar appear and animate below.</p>",
         {
-            tags: ["topic"],
+            tags: ["topisc"],
             heading: "Showing a Progress Bara",
             displayOrder: 5,
             actions: {
@@ -337,7 +286,7 @@ undum.game.situations = {
         enter: function(character, system, from) {
             system.write($("#s_saving").html());
         },
-        tags: ["topic"],
+        tags: ["topisc"],
         displayOrder: 6,
         optionText: "Saving and Loading"
     }),
@@ -420,7 +369,7 @@ undum.game.situations = {
         crack open the game file and write your own story.</p>\
         <h1>The End</h1>",
         {
-            tags: ["topic"],
+            tags: ["topisc"],
             optionText: "Finish the Tutorial",
             displayOrder: 8,
             enter: function(character, system, from) {
