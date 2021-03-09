@@ -58,6 +58,16 @@ undum.game.situations = {
         optionText: "Comer otra cosa",
         displayOrder: 1
     }),
+     situations1: new undum.Situation(
+        
+        "<p>asdasdasdasdsdasdasdasd\
+        </p>",
+        {
+            heading: "Macarrones sin tomate",
+            diplayOrder: 2,
+            tags: ["topic"]
+        }
+    ),
     todo: new undum.SimpleSituation(
         "<p>Two things can happen in a situation. The character either\
         <a href='links'>leaves</a> the situation and enters another one, or\
@@ -97,32 +107,35 @@ undum.game.situations = {
         }
     ),
     links: new undum.SimpleSituation(
-        "<p>Aunque tienes mucha hambre te sale más rentable ir <a href='sticky'>ir de compras</a>. Además\
-        de paso te das un paseo </p>\
-        para abrir tu mente y seguir trabajando la práctica de Desarrollo Ágil esta tarde. \
+        "<p>Aunque tienes tanta hambre que te comer\u00EDas un Mamut, misteriosamente te apetece m\u00E1s <a href='sticky'>ir de compras</a>. Adem\u00E1s\
+        te puede ser \u00FAtil el paseo para despejar la mente y seguir trabajando la pr\u00E1ctica de Desarrollo \u00C0gil esta tarde. </p>\
+         \
         <p></p>\
         \
         <p></p>\
         \
-        <p class='transient'>The 'Different Kinds of Links' topic has more\
-        about these links.\
+        <p class='transient'>\
+        \
         </p>",
         {
-            heading: "Comer macarrones sin tomate",
+            heading: "Macarrones sin tomate",
             diplayOrder: 2,
             tags: ["topic"]
         }
     ),
     sticky: new undum.SimpleSituation(
-        "<p>Parece una buena decisión. Intentas asegurarte de \
-        no olvidar las llaves ni la cartera antes de calir de casa.\
+        "<p>Parece una buena decisi\u00F3n. Intentas asegurarte de \
+        no olvidar las llaves tocando tu bolsillo derecho.\
         </p>\
         \
         <img src='media/games/tutorial/woodcut2.png' class='float_left'>\
-        <p>Cierras la puerta y te diriges en dirección carrefour/chino/día</p>\
-        <a href='sticky'>dirijes hacia el supermercado</a>\
+        <p>Cierras la puerta, bajas las escaleras y cuando est\u00E1s a punto de salir te das\
+        de que te has dejado la cartera dentro.\
+        <p>\
         \
-        <p></p>",
+        <p>Vuelves a subir y tras 5 minutos busc\u00E1ndola la encuentras\
+        dentro de la mochila. Finalmente por fin sales de casa\
+        y te <a href='qualities2'>dirijes hacia el supermercado</a></p>",
         {
             tags: ["topic"],
             displayOrder: 3,
@@ -147,7 +160,7 @@ undum.game.situations = {
         <p class='transient'>After you've clicked the link, let's\
         <a href='hub'>move on</a>.</p>",
         {
-        heading: "FUERA DE CASA",
+        
             actions: {
                 "one-time-action": "<p>As I said, one time actions are\
                                    mostly used to describe something in\
@@ -158,16 +171,36 @@ undum.game.situations = {
         }
     ),
     qualities: new undum.SimpleSituation(
-        "<p>Pese a parecer un atentado contra la salud pública\
-        parece una buena solución. Sin embargo recuerdas que casualemte\
+        "<p>Aunque aparenta ser un atentado contra la salud p\u00FAblica\
+        parece una buena soluci\u00F3n. Sin embargo recuerdas que casualemte\
         no te gusta el ketchup.</p>\
         \
-        <p>Piensas que deberías\
-        <a href='hub'>tomar otra decisión</a>, keep your\
+        <p>Algo por dentro de dice que deber\u00EDas \
+        <a href='hub'>tomar una mejor decisi\u00F3n</a>\
         </p>",
         {
             heading: "Macarrones con ketchup",
             tags: ["topic"],
+            displayOrder: 4,
+            actions: {
+                "skill-boost": function(character, system, action) {
+                    system.setQuality("skill", character.qualities.skill+1);
+                }
+            },
+            exit: function(character, system, to) {
+                system.setQuality("stamina", character.qualities.stamina+1);
+            }
+        }
+    ),
+    qualities2: new undum.SimpleSituation(
+        "<p></p>\
+        \
+        <p>De repente el cielo de la ciudad de \u00DAbeda se torna oscuro\
+        Una luz verde cae s\u00FAbitamente sobre tus hombros y \
+        </p>",
+        {
+            heading: "Fuera de casa",
+            tags: ["topicw"],
             displayOrder: 4,
             actions: {
                 "skill-boost": function(character, system, action) {
@@ -245,7 +278,7 @@ undum.game.situations = {
         way in the character panel. But you will also see a progress\
         bar appear and animate below.</p>",
         {
-            tags: ["topisc"],
+            tags: ["topiSc"],
             heading: "Showing a Progress Bara",
             displayOrder: 5,
             actions: {
@@ -265,6 +298,7 @@ undum.game.situations = {
             }
         }
     ),
+    
     "boost-stamina": new undum.SimpleSituation(
         "<p>\
         <img src='media/games/tutorial/woodcut3.png' class='float_right'>\
