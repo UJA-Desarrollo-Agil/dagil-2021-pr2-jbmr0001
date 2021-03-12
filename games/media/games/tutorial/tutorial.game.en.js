@@ -30,7 +30,7 @@ undum.game.slideUpSpeed = 500
 undum.game.situations = {
     start: new undum.SimpleSituation(
         "<h1>Hora de comer</h1>\
-        <img src='media/games/tutorial/woodcut1.png' class='float_right'>\
+        <img src='media/games/tutorial/tenedor.png' class='float_right'>\
         <p>Son las dos de la tarde, una hora menos en Canarias. Est\u00E1s exhausto\
         tras una maratoniana jornada de trabajo implementando la pr\u00E1ctica 2 de\
         Desarrollo \u00C1gil</p>\
@@ -128,7 +128,7 @@ undum.game.situations = {
         no olvidar las llaves tocando tu bolsillo derecho.\
         </p>\
         \
-        <img src='media/games/tutorial/woodcut2.png' class='float_left'>\
+        <img src='media/games/tutorial/calle.png' class='float_left'>\
         <p>Cierras la puerta, bajas las escaleras y cuando est\u00E1s a punto de salir te das\
         de que te has dejado la cartera dentro.\
         <p>\
@@ -195,8 +195,15 @@ undum.game.situations = {
     qualities2: new undum.SimpleSituation(
         "<p></p>\
         \
-        <p>De repente el cielo de la ciudad de \u00DAbeda se torna oscuro\
-        Una luz verde cae s\u00FAbitamente sobre tus hombros y \
+        <p>Parecia que iba a ser un día tranquilo, un día normal. Apenas\
+        te encuentras a nadie en la calle, algo raro para ser la hora punta en\
+        la que la gente sale del trabajo o del colegio.\
+        Tras 5 minutos andando por la escarpada calle que separa tu casa del\
+        Polideportivo Municipal. De repente poco a poco\
+        el cielo de la ciudad de \u00DAbeda se torna oscuro y\
+        una luz verde cae s\u00FAbitamente sobre tus hombros. <a href='quality-types'>Decides girarte</a> \
+        para ver que pasa...\
+        \
         </p>",
         {
             heading: "Fuera de casa",
@@ -213,29 +220,26 @@ undum.game.situations = {
         }
     ),
     "quality-types": new undum.SimpleSituation(
-        "<p>Not all the qualities in the character panel are displayed as\
-        numeric. Internally they are all numeric, but different qualities\
-        get to choose how to display themselves. So 'Luck', for example, is\
-        displayed as words (based on the FUDGE RPG's adjective scale),\
-        and 'Novice' is using just a check-mark.</p>\
+   
+        "<p>\
+        ¡No te lo puedes creeer!</p>\
         \
-        <p>To see how Luck changes, try using this\
-        <a href='./luck-boost'>luck-boosting action</a> or this\
-        <a href='./luck-reduce'>luck-reducing action</a>. Notice that\
-        luck uses a numeric bonus when it runs out of words. There are a range\
-        of different display types provided with Undum, and you can easily\
-        add your own too.</p>\
+        <p>Un extraño objeto no identificado con forma de platillo, ovni para los amigos,\
+        se alza sobre tus ojos. ¿Cómo puede haber una invasión extraterreste en la\
+        provincia de Jaén? En las películas esto solo pasa en Estados Unidos.\
+        Ante este tipo de situación, si bien es cierto que no es nada común, cada persona actua \
+        de una manera diferente.</p>\
+      \
+        <p>Hay gente que se <a href='parado'>queda parada por pánico</a>, otra sin embargo \
+        <a href='correr'>sale corriendo</a> o <a href='esconderse'>trata de esconderse</a>.\
         \
-        <p>When you <a href='character-text'>leave this situation</a>,\
-        I'll set 'Novice' to zero. Watch\
-        the character panel, and you'll see that Novice decides it doesn't\
-        need to be displayed any more and will be removed. You will also see\
-        that when the last\
-        quality in a group is removed ('Novice' is in the 'Progress' group),\
-        then the group heading is also removed. You can tell Undum what\
-        group each quality belongs to, and what order they should be listed.\
+        \
+        <a href='./luck-boost'>a</a> or\
+        <a href='./luck-reduce'>b</a>\
+        \
         <p>",
         {
+        heading: "Al girarte",
             actions: {
                 "luck-boost": function(character, system, action) {
                     system.setQuality("luck", character.qualities.luck+1);
@@ -249,24 +253,170 @@ undum.game.situations = {
             }
         }
     ),
-    "character-text": new undum.SimpleSituation(
-        "<h1>Character Text</h1>\
-        <p>Above the list of qualities is a short piece of text, called\
-        the character-text. This describes the character in some way. It\
-        can be set by any action or when entering or leaving a situation.\
-        It is just regular HTML content, as for all text in Undum. It can\
-        also contain Undum links, so this is another place you can put\
-        actions that the character can carry out over a long period of time.\
+    "parado": new undum.SimpleSituation(
+        "\
+        <p>Aunque no es de las mejores decisiones que tomar cuando te encuentras\
+        un ovni por la calle, permaneces inmutable mirandolo fijamente. Quieres moverte\
+        pero no puedes. Finalmente ocurre lo peor, eres abducido. Comienza la luz verde a elevarte,\
+        aunque le cuesta más de lo normal porque estás pasado de peso.\
         </p>\
-        <p class='transient'>Let's go back to the\
-        <a href='hub'>topic list</a>. As you do, I'll change the\
-        character text. Notice that it is highlighted, just the same as\
-        when a quality is altered.</p>",
+        <p>Una vez dentro del ovni. Apareces dentro de una especie de jaula. El miedo inunda tu ser\
+        Se abre una puerta como en las películas de la que sale una neblina, poco a poco va aumentando\
+        \de tamaño. La sombra tiene tamaño de humano, que raro pensabas que los aliens eran mas pequeños.\
+        \
+        \¿Hola, eres Gurb? -dijo el extraterreste.\
+        No, no lo soy -le respondes.\
+        Se te acerca y para tu sorpresa tiene la apariencia de:  <a href='ronaldo'>Cristiano Ronaldo</a>,\
+        <a href='victor'>tu profesor de Desarrollo Ágil</a> o <a href='unamuno'>Eduardo Mendoza!</a></p>",
         {
+            heading: "Te quedas parado",
             exit: function(character, system, to) {
                 system.setCharacterText(
                     "<p>We're nearing the end of the road.</p>"
                 );
+            }
+        }
+    ),
+    "correr": new undum.SimpleSituation(
+        "\
+        <p>Empiezas a correr como no lo has hecho nunca. Incluso más que cuando estas\
+        a punto de perder el autobús. Casualmente llevabas los cordones de los zapatos desabrochados \
+        y te tropiezas. No tienes escapatoria, acaba ocurriendo lo peor. Eres abducido. Comienza la\
+        luz verde a elevarte,\
+        aunque le cuesta más de lo normal porque estás pasado de peso.\
+        </p>\
+        <p>Una vez dentro del ovni. Apareces dentro de una especie de jaula. La rodilla te duele un montón\
+        \El miedo inunda tu ser\
+        Se abre una puerta como en las películas de la que sale una neblina, poco a poco va aumentando\
+        \de tamaño. La sombra tiene tamaño de humano, que raro pensabas que los aliens eran mas pequeños.\
+        \
+        \¿Hola, eres Gurb? -dijo el extraterreste.\
+        No, no lo soy -le respondes.\
+        Se te acerca y para tu sorpresa tiene la apariencia de:  <a href='ronaldo'>Cristiano Ronaldo</a>,\
+        <a href='victor'>tu profesor de Desarrollo Ágil</a> o <a href='unamuno'>Eduardo Mendoza!</a></p>",
+        {
+            heading: "Sales corriendo",
+            exit: function(character, system, to) {
+                system.setCharacterText(
+                    "<p>We're nearing the end of the road.</p>"
+                );
+            }
+        }
+    ),
+    "esconderse": new undum.SimpleSituation(
+        "\
+        <p>Estás detrás de un contenedor. Han pasado 5 minutos y el ovni no parece irse\
+        Tienes mucho miedo y estas muerto de hambre. Decides moverte poco a poroc reptando por el suelo.\
+        Estás en la delgada línea entre parecer un militar o un tonto. De repente el platillo volante te\
+        detecta y se mueve hacia ti. No tienes escapatoria, acaba ocurriendo lo peor. Eres abducido. Comienza la\
+        luz verde a elevarte,\
+        aunque le cuesta más de lo normal porque estás pasado de peso.\
+        </p>\
+        <p>Una vez dentro del ovni. Apareces dentro de una especie de jaula. Tienes los pantalones sucios por \
+        \arrastrarte por el suelo. El miedo inunda tu ser\
+        Se abre una puerta como en las películas de la que sale una neblina, poco a poco va aumentando\
+        \de tamaño. La sombra tiene tamaño de humano, que raro pensabas que los aliens eran mas pequeños.\
+        \
+        \¿Hola, eres Gurb? -dijo el extraterreste.\
+        No, no lo soy -le respondes.\
+        Se te acerca y para tu sorpresa tiene la apariencia de:  <a href='ronaldo'>Cristiano Ronaldo</a>,\
+        <a href='victor'>tu profesor de Desarrollo Ágil</a> o <a href='unamuno'>Eduardo Mendoza!</a></p>",
+        {
+            heading: "Tratas de esconderte",
+            exit: function(character, system, to) {
+                system.setCharacterText(
+                    "<p>We're nearing the end of the road.</p>"
+                );
+            }
+        }
+    ),
+    "ronaldo": new undum.SimpleSituation(
+        "\
+        <p>¿Por qué eres Cristiano Ronaldo? -le preguntas.\
+        \Nuestra especie tiene la capacidad de transformarse en cualquier persona.\
+        Hice una consulta indexada de 50 ntuplas de personas famosas de vuestro planeta en nuestra base de datos\
+        y adopte la primera apariencia que ví. -te contesta\
+        Mmmm...Pues para pasar desapercibido que digamos no es útil esta apariencia ¿Y que haces aquí? -le preguntas\
+        Es una historia muy larga, he venido a vuestro planeta en busca de un compañero\
+        Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando la apariencia\
+        de Marta Sanchez -te responde.\
+        Pues ni idea, no se de quién me hablas. ¿Me puedo ir?-le contestas\
+        Sí, sin problema. ¿Donde te dejo? -te responde</p>",
+        {
+            heading: "El extraterreste es Cristiano Ronaldo",
+            exit: function(character, system, to) {
+                system.setCharacterText(
+                    "<p>We're nearing the end of the road.</p>"
+                );
+            }
+        }
+    ),
+    "victor": new undum.SimpleSituation(
+    "\
+        <p>¿Por qué eres Victor? -le preguntas.\
+        \Nuestra especie tiene la capacidad de transformarse en cualquier persona.\
+        Hice una consulta indexada de 66 ntuplas de personas en la provincia de Jaén y adopte la primera apariencia que ví. -te contesta\
+        Mmmm... que casualidad ¿Y que haces aquí? -le preguntas\
+        Es una historia muy larga, he venido a vuestro planeta en busca de un compañero\
+        Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando la apariencia\
+        de Marta Sanchez -te responde.\
+        Pues ni idea, no se de quién me hablas. ¿Me puedo ir?-le contestas\
+        Sí, sin problema. ¿Donde te dejo? -te responde</p>",
+        {
+            heading: "El extraterreste es tu profesor de Desarrollo Ágil",
+            exit: function(character, system, to) {
+                system.setCharacterText(
+                    "<p>We're nearing the end of the road.</p>"
+                );
+            }
+        }
+    ),
+    "unamuno": new undum.SimpleSituation(
+        "\
+        <p>¿Por qué eres Victor? -le preguntas.\
+        \Nuestra especie tiene la capacidad de transformarse en cualquier persona.\
+        Eduardo Mendoza se forró haciendo un libro sobre mí sin darme ni un duro, ''Sin noticias de Gurb'' \
+        o algo así se llamaba...Todo mentira. Desde entonces lo tengo en la lista negra.-te contesta\
+        Pues vaya... ¿Y que haces aquí? -le preguntas\
+        Es una historia muy larga, he venido a vuestro planeta en busca de un compañero\
+        Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando la apariencia\
+        de Marta Sanchez -te responde.\
+        Pues ni idea, no se de quién me hablas. ¿Me puedo ir?-le contestas\
+        Sí, sin problema. ¿Donde te dejo? -te responde</p>",
+       
+        {
+            heading: "El extraterreste es Miguel de Unamuno",
+            exit: function(character, system, to) {
+                system.setCharacterText(
+                    "<p>We're nearing the end of the road.</p>"
+                );
+            }
+        }
+    ),
+    final: new undum.SimpleSituation(
+        "<p></p>\
+        \
+        <p>Parecia que iba a ser un día tranquilo, un día normal. Apenas\
+        te encuentras a nadie en la calle, algo raro para ser la hora punta en\
+        la que la gente sale del trabajo o del colegio.\
+        Tras 5 minutos andando por la escarpada calle que separa tu casa del\
+        Polideportivo Municipal. De repente poco a poco\
+        el cielo de la ciudad de \u00DAbeda se torna oscuro y\
+        una luz verde cae s\u00FAbitamente sobre tus hombros. <a href='quality-types'>Decides girarte</a> \
+        para ver que pasa...\
+        \
+        </p>",
+        {
+            heading: "Fuera de casa",
+            tags: ["topicw"],
+            displayOrder: 4,
+            actions: {
+                "skill-boost": function(character, system, action) {
+                    system.setQuality("skill", character.qualities.skill+1);
+                }
+            },
+            exit: function(character, system, to) {
+                system.setQuality("stamina", character.qualities.stamina+1);
             }
         }
     ),
