@@ -257,7 +257,8 @@ undum.game.situations = {
         "\
         <p>Aunque no es de las mejores decisiones que tomar cuando te encuentras\
         un ovni por la calle, permaneces inmutable mirandolo fijamente. Quieres moverte\
-        pero no puedes. Finalmente ocurre lo peor, eres abducido. Comienza la luz verde a elevarte,\
+        pero no puedes. El miedo te hace sentir todo lo que te rodea, hasta la cartera en tu bolsillo derecho.\
+        Finalmente ocurre lo peor, eres abducido. Comienza la luz verde a elevarte,\
         aunque le cuesta más de lo normal porque estás pasado de peso.\
         </p>\
         <p>Una vez dentro del ovni. Apareces dentro de una especie de jaula. El miedo inunda tu ser\
@@ -281,7 +282,8 @@ undum.game.situations = {
         "\
         <p>Empiezas a correr como no lo has hecho nunca. Incluso más que cuando estas\
         a punto de perder el autobús. Casualmente llevabas los cordones de los zapatos desabrochados \
-        y te tropiezas. No tienes escapatoria, acaba ocurriendo lo peor. Eres abducido. Comienza la\
+        y te tropiezas. Se te cae la cartera, inmediatamente la recojes y te levantas. \
+        \No tienes escapatoria, acaba ocurriendo lo peor. Eres abducido. Comienza la\
         luz verde a elevarte,\
         aunque le cuesta más de lo normal porque estás pasado de peso.\
         </p>\
@@ -307,7 +309,8 @@ undum.game.situations = {
         "\
         <p>Estás detrás de un contenedor. Han pasado 5 minutos y el ovni no parece irse\
         Tienes mucho miedo y estas muerto de hambre. Decides moverte poco a poroc reptando por el suelo.\
-        Estás en la delgada línea entre parecer un militar o un tonto. De repente el platillo volante te\
+        Estás en la delgada línea entre parecer un militar o un tonto. Te das cuenta de que se te ha caido la \
+        cartera más atrás, vuelves para recojerla y el platillo volante te\
         detecta y se mueve hacia ti. No tienes escapatoria, acaba ocurriendo lo peor. Eres abducido. Comienza la\
         luz verde a elevarte,\
         aunque le cuesta más de lo normal porque estás pasado de peso.\
@@ -341,7 +344,7 @@ undum.game.situations = {
         Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando la apariencia\
         de Marta Sanchez -te responde.\
         Pues ni idea, no se de quién me hablas. ¿Me puedo ir?-le contestas\
-        Sí, sin problema. ¿Donde te dejo? -te responde</p>",
+        Sí, sin problema. ¿Donde te dejo? -te responde <a href='final1'>final 1</a></p> ",
         {
             heading: "El extraterreste es Cristiano Ronaldo",
             exit: function(character, system, to) {
@@ -361,7 +364,12 @@ undum.game.situations = {
         Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando la apariencia\
         de Marta Sanchez -te responde.\
         Pues ni idea, no se de quién me hablas. ¿Me puedo ir?-le contestas\
-        Sí, sin problema. ¿Donde te dejo? -te responde</p>",
+         ¿Me puedo ir?-le contestas<a href='final2'>final 2</a>\
+        Sí, sin problema. ¿Donde te dejo? -te responde\
+        En el Supersol -le contestas\
+        ¡Espera! se te ha caido la cartera, tómala. -te advierte\
+        Ahh, muchas gracias. Menudo problemoón ir a comprar sin dinero...jajaj -le contestas <a href='final2'>final 2</a>\
+        </p>",
         {
             heading: "El extraterreste es tu profesor de Desarrollo Ágil",
             exit: function(character, system, to) {
@@ -381,8 +389,12 @@ undum.game.situations = {
         Es una historia muy larga, he venido a vuestro planeta en busca de un compañero\
         Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando la apariencia\
         de Marta Sanchez -te responde.\
-        Pues ni idea, no se de quién me hablas. ¿Me puedo ir?-le contestas\
-        Sí, sin problema. ¿Donde te dejo? -te responde</p>",
+        Pues ni idea, no se de quién me hablas. ¿Me puedo ir?-le contestas<a href='final2'>final 2</a>\
+        Sí, sin problema. ¿Donde te dejo? -te responde\
+        En el Supersol -le contestas\
+        ¡Espera! se te ha caido la cartera, tómala. -te advierte\
+        Ahh, muchas gracias. Menudo problemoón ir a comprar sin dinero...jajaj -le contestas\
+        </p>",
        
         {
             heading: "El extraterreste es Miguel de Unamuno",
@@ -393,31 +405,47 @@ undum.game.situations = {
             }
         }
     ),
-    final: new undum.SimpleSituation(
-        "<p></p>\
+    final1: new undum.SimpleSituation(
+        "<p>Te depides de tu nuevo amigo alien. Quieres pararte a twitearlo pero\
+        tu hambres urge más. Te diriges hacia la lontana puerta del supermercado y\
+        recorres esos largos pasillos. A lo lejos ves tu ansiada recompensa, el tomate\
+        frito. Si te paras a pensarlo parece un poco subrealista lo que te acaba de pasar.\
+        Pero por fin estás en la caja, metes la mano en el bolsillo y...\
+        No está la cartera. \
+        Algunas palabras irreproducibles salen de tu boca mientras te quedas mirando al infinito.\
         \
-        <p>Parecia que iba a ser un día tranquilo, un día normal. Apenas\
-        te encuentras a nadie en la calle, algo raro para ser la hora punta en\
-        la que la gente sale del trabajo o del colegio.\
-        Tras 5 minutos andando por la escarpada calle que separa tu casa del\
-        Polideportivo Municipal. De repente poco a poco\
-        el cielo de la ciudad de \u00DAbeda se torna oscuro y\
-        una luz verde cae s\u00FAbitamente sobre tus hombros. <a href='quality-types'>Decides girarte</a> \
-        para ver que pasa...\
+        Un extraterreste te ha robado\
+        la cartera. Finalmente sigues el camino de vuelta a casa con las manos vacías y sin ganas de comer.\
         \
+        FIN\
         </p>",
         {
-            heading: "Fuera de casa",
-            tags: ["topicw"],
-            displayOrder: 4,
-            actions: {
-                "skill-boost": function(character, system, action) {
-                    system.setQuality("skill", character.qualities.skill+1);
-                }
-            },
-            exit: function(character, system, to) {
-                system.setQuality("stamina", character.qualities.stamina+1);
-            }
+            
+            heading: "Un alienígena te deja en el SuperSol",
+            
+        }
+    ),
+    final2: new undum.SimpleSituation(
+        "<p>Te depides de tu nuevo amigo alien. Quieres pararte a twitearlo pero\
+        tu hambres urge más. Te diriges hacia la lontana puerta del supermercado y\
+        recorres esos largos pasillos. A lo lejos ves tu ansiada recompensa, el tomate\
+        frito. Si te paras a pensarlo parece un poco subrealista lo que te acaba de pasar.\
+        Pero por fin estás en la caja, metes la mano en el bolsillo y...\
+        No está la cartera. \
+        Algunas palabras irreproducibles salen de tu boca mientras te quedas mirando al infinito.\
+        \
+        Un extraterreste te ha robado\
+        la cartera. Finalmente sigues el camino de vuelta a casa con las manos vacías y sin ganas de comer.\
+        Te dispones a abrir la puerta y...¡Lo que te faltaba! Se te han caido las llaves que guardabas\
+        en tu bolsillo izquierdo cuando estabas huyendo. Te has quedao sin comer y fuera de casa.\
+        \
+        \
+        FIN\
+        </p>",
+        {
+            
+            heading: "Un alienígena te deja en el SuperSol",
+            
         }
     ),
     progress: new undum.SimpleSituation(
