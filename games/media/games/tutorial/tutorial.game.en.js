@@ -120,8 +120,16 @@ undum.game.situations = {
         {
             heading: "Macarrones sin tomate",
             diplayOrder: 2,
-            tags: ["topic"]
+            tags: ["topic"],
+            exit: function(character, system, to) {
+                system.setCharacterText(
+                    "<p>Cada vez tienes mas hambre</p>"
+                );
+                 system.setQuality("skill", character.qualities.skill+1);
+   
+            }
         }
+
     ),
     sticky: new undum.SimpleSituation(
         "<p>Parece una buena decisi\u00F3n. Intentas asegurarte de \
@@ -194,16 +202,15 @@ undum.game.situations = {
         "<p></p>\
         \
         <p>Parec\u00EDa que iba a ser un d\u00EDa tranquilo, un d\u00EDa normal. \
-        <img src='media/games/tutorial/tenedor.png' class='float_right'> Apenas\
+        <img src='media/games/tutorial/calle2.png' class='float_right'> Apenas\
         te encuentras a nadie en la calle, algo raro para ser la hora punta en\
         la que la gente sale del trabajo o del colegio.<\p>\
         <p>Tras 5 minutos andando por la escarpada calle que separa tu casa del\
         Polideportivo Municipal.<\p>\
         <p>De repente\
         el cielo de la ciudad de \u00DAbeda se torna oscuro y\
-        una luz verde cae s\u00FAbitamente sobre tus hombros. <a href='ovni'>Decides girarte para ver que pasa...</a> \
-        \
-        </p>",
+        una luz verde cae s\u00FAbitamente sobre tus hombros.\
+        <p><a href='ovni'>Decides girarte para ver que pasa.</a></p>",
         {
             heading: "Fuera de casa",
             tags: ["topicw"],
@@ -221,15 +228,16 @@ undum.game.situations = {
     "ovni": new undum.SimpleSituation(
    
         "<p>\
-        ¡No te lo puedes creeer!</p>\
+        \u00A1No te lo puedes creeer!\
         \
-        <p>Un extraño objeto no identificado con forma de platillo, ovni para los amigos,\
-        se alza sobre tus ojos. ¿Cómo puede haber una invasión extraterreste en la\
-        provincia de Jaén? En las películas esto solo pasa en Estados Unidos.\
-        Ante este tipo de situación, si bien es cierto que no es nada común, cada persona actua \
-        de una manera diferente. <img src='media/games/tutorial/ovni2.png' class='float_left'></p>\
+        Un extra\u00F1o objeto no identificado con forma de platillo, ovni para los amigos,\
+        se alza sobre tus ojos. <img src='media/games/tutorial/ovni2.png' class='float_left'></p>\
+        <p>\u00BFC\u00F3mo puede haber una invasi\u00F3n extraterreste en la\
+        provincia de Ja\u00E9n? En las pel\u00EDculas esto solo pasa en Estados Unidos.</p>\
+        <p>Ante este tipo de situaci\u00f3n, si bien es cierto que no es nada com\u00FAn, cada persona actua \
+        de una manera diferente. </p>\
       \
-        <p>Hay gente que se <a href='parado'>queda parada por pánico</a>, otra sin embargo \
+        <p>Hay gente que se <a href='parado'>queda parada por p\u00E1nico</a>, otra sin embargo \
         <a href='correr'>sale corriendo</a> o <a href='esconderse'>trata de esconderse</a>.\
         \
         \
@@ -255,19 +263,19 @@ undum.game.situations = {
     "parado": new undum.SimpleSituation(
         "\
         <p>Aunque no es de las mejores decisiones que tomar cuando te encuentras\
-        un ovni por la calle, permaneces inmutable mirandolo fijamente. Quieres moverte\
+        un ovni por la calle, permaneces inmutable mirandolo fijamente.</p> <p>Quieres moverte\
         pero no puedes. El miedo te hace sentir todo lo que te rodea, hasta la cartera en tu bolsillo derecho.</p>\
         <p>Finalmente ocurre lo peor, eres abducido. Comienza la luz verde a elevarte,\
-        aunque le cuesta más de lo normal porque estás pasado de peso.\
+        aunque le cuesta m\u00E1s de lo normal porque est\u00E1s pasado de peso.\
         <img src='media/games/tutorial/ovni.png' class='float_left'></p>\
-        <p>Una vez dentro del ovni. Apareces dentro de una especie de jaula. El miedo inunda tu ser\
-        Se abre una puerta como en las películas de la que sale una neblina, poco a poco va aumentando\
-        \de tamaño. La sombra tiene tamaño de humano, que raro pensabas que los aliens eran mas pequeños.\
-        \
-        \¿Hola, eres Gurb? -dijo el extraterreste.\
-        No, no lo soy -le respondes.\
-        Se te acerca y para tu sorpresa tiene la apariencia de:  <a href='ronaldo'>Cristiano Ronaldo</a>,\
-        <a href='victor'>tu profesor de Desarrollo Ágil</a> o <a href='unamuno'>Eduardo Mendoza!</a></p>",
+        <p>Una vez dentro del ovni. Apareces dentro de una especie de jaula. <img src='media/games/tutorial/prision.png' class='float_right'>El miedo inunda tu ser\
+        <p>Se abre una puerta como en las pel\u00EDculas de la que sale una neblina que poco a poco va aumentando\
+        \de tama\u00F1o.</p><p> Aparece la silueta de un humano, qu\u00E9 raro pensabas que los aliens eran m\u00E1s peque\u00F1os.\
+        <img src='media/games/tutorial/silueta.png' class='float_left'></p>\
+        \<p>-\u00BFHola, eres Gurb? -dijo el extraterreste.</p>\
+        <p>-No, no lo soy -le respondes.</p>\
+        <p>Se te acerca y para tu sorpresa tiene la apariencia de:  <a href='ronaldo'>Cristiano Ronaldo</a>,\
+        <a href='victor'>\ntu profesor de Desarrollo \u00C1gil</a> o <a href='mendoza'>Eduardo Mendoza</a>.</p>",
         {
             heading: "Te quedas parado",
             exit: function(character, system, to) {
@@ -279,22 +287,23 @@ undum.game.situations = {
     ),
     "correr": new undum.SimpleSituation(
         "\
-        <p>Empiezas a correr como no lo has hecho nunca. Incluso más que cuando estas\
-        a punto de perder el autobús. Casualmente llevabas los cordones de los zapatos desabrochados \
-        y te tropiezas. Se te cae la cartera, inmediatamente la recojes y te levantas. \
-        \No tienes escapatoria, acaba ocurriendo lo peor. Eres abducido. Comienza la\
+        <p>Empiezas a correr como no lo has hecho nunca. Incluso m\u00E1s que cuando estas\
+        a punto de perder el autob\u00FAs.</p> \
+        <p>Llevabas los cordones de los zapatos desabrochados \
+        y te tropiezas. Se te cae la cartera, inmediatamente la recojes y te levantas.<img src='media/games/tutorial/ovni.png' class='float_left'></p>\
+        \<p>No tienes escapatoria, acaba ocurriendo lo peor. Eres abducido. Comienza la\
         luz verde a elevarte,\
-        aunque le cuesta más de lo normal porque estás pasado de peso.\
-        <img src='media/games/tutorial/ovni.png'</p>\
-        <p>Una vez dentro del ovni. Apareces dentro de una especie de jaula. La rodilla te duele un montón\
-        \El miedo inunda tu ser\
-        Se abre una puerta como en las películas de la que sale una neblina, poco a poco va aumentando\
-        \de tamaño. La sombra tiene tamaño de humano, que raro pensabas que los aliens eran mas pequeños.\
-        \
-        \¿Hola, eres Gurb? -dijo el extraterreste.\
-        No, no lo soy -le respondes.\
-        Se te acerca y para tu sorpresa tiene la apariencia de:  <a href='ronaldo'>Cristiano Ronaldo</a>,\
-        <a href='victor'>tu profesor de Desarrollo Ágil</a> o <a href='unamuno'>Eduardo Mendoza!</a></p>",
+        aunque le cuesta m\u00E1s de lo normal porque est\u00E1s pasado de peso.\
+        </p>\
+        <p>Una vez dentro del ovni. Apareces dentro de una especie de jaula. <img src='media/games/tutorial/prision.png' class='float_right'>La rodilla te duele un mont\u00F3n\
+        \y el miedo inunda tu ser. </p>\
+        <p>Se abre una puerta como en las pel\u00EDculas de la que sale una neblina que poco a poco va aumentando\
+        \de tama\u00F1o.</p><p> Aparece la silueta de un humano, qu\u00E9 raro pensabas que los aliens eran m\u00E1s peque\u00F1os.\
+        <img src='media/games/tutorial/silueta.png' class='float_left'></p>\
+        \<p>-\u00BFHola, eres Gurb? -dijo el extraterreste.</p>\
+        <p>-No, no lo soy -le respondes.</p>\
+        <p>Se te acerca y para tu sorpresa tiene la apariencia de:  <a href='ronaldo'>Cristiano Ronaldo</a>,\
+        <a href='victor'>\ntu profesor de Desarrollo \u00C1gil</a> o <a href='mendoza'>Eduardo Mendoza</a>.</p>",
         {
             heading: "Sales corriendo",
             exit: function(character, system, to) {
@@ -314,15 +323,15 @@ undum.game.situations = {
         luz verde a elevarte,\
         aunque le cuesta más de lo normal porque estás pasado de peso.\
         <img src='media/games/tutorial/ovni.png'</p>\
-        <p>Una vez dentro del ovni. Apareces dentro de una especie de jaula. Tienes los pantalones sucios por \
+        <p>Una vez dentro del ovni. Apareces dentro de una especie de jaula. <img src='media/games/tutorial/prision.png' class='float_right'>Tienes los pantalones sucios por \
         \arrastrarte por el suelo. El miedo inunda tu ser\
-        Se abre una puerta como en las películas de la que sale una neblina, poco a poco va aumentando\
-        \de tamaño. La sombra tiene tamaño de humano, que raro pensabas que los aliens eran mas pequeños.\
-        \
-        \¿Hola, eres Gurb? -dijo el extraterreste.\
-        No, no lo soy -le respondes.\
-        Se te acerca y para tu sorpresa tiene la apariencia de:  <a href='ronaldo'>Cristiano Ronaldo</a>,\
-        <a href='victor'>tu profesor de Desarrollo Ágil</a> o <a href='unamuno'>Eduardo Mendoza!</a></p>",
+        <p>Se abre una puerta como en las pel\u00EDculas de la que sale una neblina que poco a poco va aumentando\
+        \de tama\u00F1o.</p><p> Aparece la silueta de un humano, qu\u00E9 raro pensabas que los aliens eran m\u00E1s peque\u00F1os.\
+        <img src='media/games/tutorial/silueta.png' class='float_left'></p>\
+        \<p>-\u00BFHola, eres Gurb? -dijo el extraterreste.</p>\
+        <p>-No, no lo soy -le respondes.</p>\
+        <p>Se te acerca y para tu sorpresa tiene la apariencia de:  <a href='ronaldo'>Cristiano Ronaldo</a>,\
+        <a href='victor'>\ntu profesor de Desarrollo \u00C1gil</a> o <a href='mendoza'>Eduardo Mendoza</a>.</p>",
         {
             heading: "Tratas de esconderte",
             exit: function(character, system, to) {
@@ -334,16 +343,17 @@ undum.game.situations = {
     ),
     "ronaldo": new undum.SimpleSituation(
         "\
-        <p>¿Por qué eres Cristiano Ronaldo? -le preguntas.\
-        \Nuestra especie tiene la capacidad de transformarse en cualquier persona.\
+        <p>¿Por qué eres Cristiano Ronaldo? -le preguntas.</p>\
+        \<P>Nuestra especie tiene la capacidad de transformarse en cualquier persona.\
         Hice una consulta indexada de 50 ntuplas de personas famosas de vuestro planeta en nuestra base de datos\
-        y adopte la primera apariencia que ví. -te contesta\
-        Mmmm...Pues para pasar desapercibido que digamos no es útil esta apariencia ¿Y que haces aquí? -le preguntas\
-        Es una historia muy larga, he venido a vuestro planeta en busca de un compañero\
+        y adopte la primera apariencia que ví. -te contesta</p>\
+        <p>Mmmm...Pues para pasar desapercibido que digamos no es útil esta apariencia ¿Y que haces aquí? -le preguntas</p><img src='media/games/tutorial/alien.png' class='float_left'>\
+        <p>Es una historia muy larga, he venido a vuestro planeta en busca de un compañero\
         Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando la apariencia\
-        de Marta Sanchez -te responde.\
+        de Marta Sanchez -te responde.</p>\
         Pues ni idea, no se de quién me hablas. ¿Me puedo ir?-le contestas\
-        Sí, sin problema. ¿Donde te dejo? -te responde <a href='final1'>final 1</a></p> ",
+        Sí, sin problema. ¿Donde te dejo? -te responde <a href='final2'>final 2</a>\
+        </p>",
         {
             heading: "El extraterreste es Cristiano Ronaldo",
             exit: function(character, system, to) {
@@ -358,7 +368,7 @@ undum.game.situations = {
         <p>¿Por qué eres Victor? -le preguntas.\
         \Nuestra especie tiene la capacidad de transformarse en cualquier persona.\
         Hice una consulta indexada de 66 ntuplas de personas en la provincia de Jaén y adopte la primera apariencia que ví. -te contesta\
-        Mmmm... que casualidad ¿Y que haces aquí? -le preguntas\
+        Mmmm... que casualidad ¿Y que haces aquí? -le preguntas <img src='media/games/tutorial/alien.png' class='float_left'>\
         Es una historia muy larga, he venido a vuestro planeta en busca de un compañero\
         Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando la apariencia\
         de Marta Sanchez -te responde.\
@@ -378,13 +388,13 @@ undum.game.situations = {
             }
         }
     ),
-    "unamuno": new undum.SimpleSituation(
+    "mendoza": new undum.SimpleSituation(
         "\
         <p>¿Por qué eres Victor? -le preguntas.\
         \Nuestra especie tiene la capacidad de transformarse en cualquier persona.\
         Eduardo Mendoza se forró haciendo un libro sobre mí sin darme ni un duro, ''Sin noticias de Gurb'' \
         o algo así se llamaba...Todo mentira. Desde entonces lo tengo en la lista negra.-te contesta\
-        Pues vaya... ¿Y que haces aquí? -le preguntas\
+        Pues vaya... ¿Y que haces aquí? -le preguntas <img src='media/games/tutorial/alien.png' class='float_left'>\
         Es una historia muy larga, he venido a vuestro planeta en busca de un compañero\
         Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando la apariencia\
         de Marta Sanchez -te responde.\
@@ -396,7 +406,7 @@ undum.game.situations = {
         </p>",
        
         {
-            heading: "El extraterreste es Miguel de Unamuno",
+            heading: "El extraterreste es Miguel de Eduardo Mendoza",
             exit: function(character, system, to) {
                 system.setCharacterText(
                     "<p>We're nearing the end of the road.</p>"
@@ -406,7 +416,7 @@ undum.game.situations = {
     ),
     final1: new undum.SimpleSituation(
         "<p>Te depides de tu nuevo amigo alien. Quieres pararte a twitearlo pero\
-        tu hambres urge más. Te diriges hacia la lontana puerta del supermercado y\
+        tu hambres urge más. <img src='media/games/tutorial/supermercado.png' class='float_left'> Te diriges hacia la lontana puerta del supermercado y\
         recorres esos largos pasillos. A lo lejos ves tu ansiada recompensa, el tomate\
         frito. Si te paras a pensarlo parece un poco subrealista lo que te acaba de pasar.\
         Pero por fin estás en la caja, metes la mano en el bolsillo y...\
@@ -414,19 +424,19 @@ undum.game.situations = {
         Algunas palabras irreproducibles salen de tu boca mientras te quedas mirando al infinito.\
         \
         Un extraterreste te ha robado\
-        la cartera. Finalmente sigues el camino de vuelta a casa con las manos vacías y sin ganas de comer.\
+        la cartera. <img src='media/games/tutorial/cartera.png' class='float_right'> Finalmente sigues el camino de vuelta a casa con las manos vacías y sin ganas de comer.\
         \
         FIN\
         </p>",
         {
             
-            heading: "Un alienígena te deja en el SuperSol",
+            heading: "Un alienígena te deja en el uperSol",
             
         }
     ),
     final2: new undum.SimpleSituation(
         "<p>Te depides de tu nuevo amigo alien. Quieres pararte a twitearlo pero\
-        tu hambres urge más. Te diriges hacia la lontana puerta del supermercado y\
+        tu hambres urge más. <img src='media/games/tutorial/supermercado.png' class='float_left'>Te diriges hacia la lontana puerta del supermercado y\
         recorres esos largos pasillos. A lo lejos ves tu ansiada recompensa, el tomate\
         frito. Si te paras a pensarlo parece un poco subrealista lo que te acaba de pasar.\
         Pero por fin estás en la caja, metes la mano en el bolsillo y...\
@@ -434,7 +444,7 @@ undum.game.situations = {
         Algunas palabras irreproducibles salen de tu boca mientras te quedas mirando al infinito.\
         \
         Un extraterreste te ha robado\
-        la cartera. Finalmente sigues el camino de vuelta a casa con las manos vacías y sin ganas de comer.\
+        la cartera. <img src='media/games/tutorial/cartera.png' class='float_right'>Finalmente sigues el camino de vuelta a casa con las manos vacías y sin ganas de comer.\
         Te dispones a abrir la puerta y...¡Lo que te faltaba! Se te han caido las llaves que guardabas\
         en tu bolsillo izquierdo cuando estabas huyendo. Te has quedao sin comer y fuera de casa.\
         \
@@ -470,7 +480,7 @@ undum.game.situations = {
             },
             exit: function(character, system, to) {
                 system.animateQuality(
-                    'stamina', character.qualities.stamina+1
+                    'hambre', character.qualities.hambre+1
                 );
             }
         }
@@ -605,8 +615,8 @@ undum.game.qualities = {
     skill: new undum.IntegerQuality(
         "Skill", {priority:"0001", group:'stats'}
     ),
-    stamina: new undum.NumericQuality(
-        "Stamina", {priority:"0002", group:'stats'}
+    hambre: new undum.NumericQuality(
+        "Hambre", {priority:"0002", group:'stats'}
     ),
     luck: new undum.FudgeAdjectivesQuality( // Fudge as in the FUDGE RPG
         "<span title='Skill, Stamina and Luck are reverently borrowed from the Fighting Fantasy series of gamebooks. The words representing Luck are from the FUDGE RPG. This tooltip is illustrating that you can use any HTML in the label for a quality (in this case a span containing a title attribute).'>Luck</span>",
@@ -637,7 +647,7 @@ undum.game.qualityGroups = {
  * to configure the character at the start of play. */
 undum.game.init = function(character, system) {
     character.qualities.skill = 12;
-    character.qualities.stamina = 12;
+    character.qualities.hambre = 12;
     character.qualities.luck = 0;
     character.qualities.novice = 1;
     character.qualities.inspiration = 0;
