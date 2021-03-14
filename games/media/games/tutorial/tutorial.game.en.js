@@ -33,7 +33,7 @@ undum.game.situations = {
         <img src='media/games/tutorial/tenedor.png' class='float_right'>\
         <p>Son las dos de la tarde, una hora menos en Canarias. Est\u00E1s exhausto\
         tras una maratoniana jornada de trabajo implementando la pr\u00E1ctica 2 de\
-        Desarrollo \u00C1gil</p>\
+        Desarrollo \u00C1gil.</p>\
         \
         <p>Vas a la cocina y decides demostrar tus dotes de chef realizando\
         unos macarrones con tomate.</p>\
@@ -128,14 +128,14 @@ undum.game.situations = {
         no olvidar las llaves tocando tu bolsillo derecho.\
         </p>\
         \
-        <img src='media/games/tutorial/calle.png' class='float_left'>\
+        <img src='media/games/tutorial/casa.png' class='float_left'>\
         <p>Cierras la puerta, bajas las escaleras y cuando est\u00E1s a punto de salir te das\
         de que te has dejado la cartera dentro.\
         <p>\
         \
         <p>Vuelves a subir y tras 5 minutos busc\u00E1ndola la encuentras\
         dentro de la mochila. Finalmente por fin sales de casa\
-        y te <a href='qualities2'>dirijes hacia el supermercado</a></p>",
+        y te <a href='calle'>dirijes hacia el supermercado</a>.</p>",
         {
             tags: ["topic"],
             displayOrder: 3,
@@ -173,11 +173,9 @@ undum.game.situations = {
     qualities: new undum.SimpleSituation(
         "<p>Aunque aparenta ser un atentado contra la salud p\u00FAblica\
         parece una buena soluci\u00F3n. Sin embargo recuerdas que casualemte\
-        no te gusta el ketchup.</p>\
-        \
-        <p>Algo por dentro de dice que deber\u00EDas \
-        <a href='hub'>tomar una mejor decisi\u00F3n</a>\
-        </p>",
+        no te gusta el ketchup. Algo por dentro de dice que deber\u00EDas \
+        <a href='hub'>tomar una mejor decisi\u00F3n</a>\</p>"
+        ,
         {
             heading: "Macarrones con ketchup",
             tags: ["topic"],
@@ -192,17 +190,18 @@ undum.game.situations = {
             }
         }
     ),
-    qualities2: new undum.SimpleSituation(
+    calle: new undum.SimpleSituation(
         "<p></p>\
         \
-        <p>Parecia que iba a ser un día tranquilo, un día normal. Apenas\
+        <p>Parec\u00EDa que iba a ser un d\u00EDa tranquilo, un d\u00EDa normal. \
+        <img src='media/games/tutorial/tenedor.png' class='float_right'> Apenas\
         te encuentras a nadie en la calle, algo raro para ser la hora punta en\
-        la que la gente sale del trabajo o del colegio.\
-        Tras 5 minutos andando por la escarpada calle que separa tu casa del\
-        Polideportivo Municipal. De repente poco a poco\
+        la que la gente sale del trabajo o del colegio.<\p>\
+        <p>Tras 5 minutos andando por la escarpada calle que separa tu casa del\
+        Polideportivo Municipal.<\p>\
+        <p>De repente\
         el cielo de la ciudad de \u00DAbeda se torna oscuro y\
-        una luz verde cae s\u00FAbitamente sobre tus hombros. <a href='quality-types'>Decides girarte</a> \
-        para ver que pasa...\
+        una luz verde cae s\u00FAbitamente sobre tus hombros. <a href='ovni'>Decides girarte para ver que pasa...</a> \
         \
         </p>",
         {
@@ -219,7 +218,7 @@ undum.game.situations = {
             }
         }
     ),
-    "quality-types": new undum.SimpleSituation(
+    "ovni": new undum.SimpleSituation(
    
         "<p>\
         ¡No te lo puedes creeer!</p>\
@@ -228,7 +227,7 @@ undum.game.situations = {
         se alza sobre tus ojos. ¿Cómo puede haber una invasión extraterreste en la\
         provincia de Jaén? En las películas esto solo pasa en Estados Unidos.\
         Ante este tipo de situación, si bien es cierto que no es nada común, cada persona actua \
-        de una manera diferente.</p>\
+        de una manera diferente. <img src='media/games/tutorial/ovni2.png' class='float_left'></p>\
       \
         <p>Hay gente que se <a href='parado'>queda parada por pánico</a>, otra sin embargo \
         <a href='correr'>sale corriendo</a> o <a href='esconderse'>trata de esconderse</a>.\
@@ -257,10 +256,10 @@ undum.game.situations = {
         "\
         <p>Aunque no es de las mejores decisiones que tomar cuando te encuentras\
         un ovni por la calle, permaneces inmutable mirandolo fijamente. Quieres moverte\
-        pero no puedes. El miedo te hace sentir todo lo que te rodea, hasta la cartera en tu bolsillo derecho.\
-        Finalmente ocurre lo peor, eres abducido. Comienza la luz verde a elevarte,\
+        pero no puedes. El miedo te hace sentir todo lo que te rodea, hasta la cartera en tu bolsillo derecho.</p>\
+        <p>Finalmente ocurre lo peor, eres abducido. Comienza la luz verde a elevarte,\
         aunque le cuesta más de lo normal porque estás pasado de peso.\
-        </p>\
+        <img src='media/games/tutorial/ovni.png' class='float_left'></p>\
         <p>Una vez dentro del ovni. Apareces dentro de una especie de jaula. El miedo inunda tu ser\
         Se abre una puerta como en las películas de la que sale una neblina, poco a poco va aumentando\
         \de tamaño. La sombra tiene tamaño de humano, que raro pensabas que los aliens eran mas pequeños.\
@@ -286,7 +285,7 @@ undum.game.situations = {
         \No tienes escapatoria, acaba ocurriendo lo peor. Eres abducido. Comienza la\
         luz verde a elevarte,\
         aunque le cuesta más de lo normal porque estás pasado de peso.\
-        </p>\
+        <img src='media/games/tutorial/ovni.png'</p>\
         <p>Una vez dentro del ovni. Apareces dentro de una especie de jaula. La rodilla te duele un montón\
         \El miedo inunda tu ser\
         Se abre una puerta como en las películas de la que sale una neblina, poco a poco va aumentando\
@@ -314,7 +313,7 @@ undum.game.situations = {
         detecta y se mueve hacia ti. No tienes escapatoria, acaba ocurriendo lo peor. Eres abducido. Comienza la\
         luz verde a elevarte,\
         aunque le cuesta más de lo normal porque estás pasado de peso.\
-        </p>\
+        <img src='media/games/tutorial/ovni.png'</p>\
         <p>Una vez dentro del ovni. Apareces dentro de una especie de jaula. Tienes los pantalones sucios por \
         \arrastrarte por el suelo. El miedo inunda tu ser\
         Se abre una puerta como en las películas de la que sale una neblina, poco a poco va aumentando\
