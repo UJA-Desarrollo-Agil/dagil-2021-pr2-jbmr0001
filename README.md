@@ -10,7 +10,7 @@ aparentemente cotidiana misión de ir al supermercado.
 
 El objetivo del juego es encontrar la mejor secuencia de deciciones que menos cansancio y hambre reporten.
 El protagonista en función de estas deciciones vivirá ciertas modificaciones en la historia como si de mundos paralelos se trataran. Además 
-dependiendo si el protagonista decide dejarse las llaves o no el final de la historia será distinto.
+dependiendo de si el protagonista decide dejarse las llaves o no el final de la historia será distinto.
 
 La historia tiene un enfoque cotidiano en primera persona con toques divertidos y algunos cammeos. Cabe destacar la presencia de gran cantidad 
 de imágenes para ayudar a la inmersión.
@@ -46,7 +46,7 @@ https://trello.com/b/Szir0S3x/pr%C3%A1ctica-2
 
 
 - **Bot de Trello:**
-![image](https://user-images.githubusercontent.com/78794703/111201139-c2021c80-85c2-11eb-9ae8-7f468193a0cb.png)
+![image](https://user-images.githubusercontent.com/78794703/111202305-00e4a200-85c4-11eb-90a3-f715b5d1657f.png)
 ![image](https://user-images.githubusercontent.com/78794703/111201322-efe76100-85c2-11eb-8341-363ea290d003.png)
 
 
