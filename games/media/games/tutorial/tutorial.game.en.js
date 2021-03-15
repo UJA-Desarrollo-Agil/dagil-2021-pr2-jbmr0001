@@ -105,7 +105,7 @@ undum.game.situations = {
     ),
     ketchup: new undum.SimpleSituation(
         "<p>Aunque aparenta ser un atentado contra la salud p\u00FAblica\
-        parece una buena soluci\u00F3n. Sin embargo recuerdas que casualemte\
+        parece una buena soluci\u00F3n. Sin embargo recuerdas que casualmente\
         no te gusta el ketchup. Algo por dentro de dice que deber\u00EDas \
         <a href='hub'>tomar una mejor decisi\u00F3n.</a>\</p>"
         ,
