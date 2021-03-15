@@ -15,8 +15,8 @@ dependiendo de si el protagonista decide dejarse las llaves o no el final de la 
 La historia tiene un enfoque cotidiano en primera persona con toques divertidos y algunos cammeos. Cabe destacar la presencia de gran cantidad 
 de imágenes para ayudar a la inmersión.
 
-En cuanto a las funcionalidades encontramos el incremento de atributos, como pueden ser el cansancio y el hambre. Modificación del
-estado de atributos como lo es la hora del día y por último encontramos altributo llaves que en función de su valor se desbloqueará un
+En cuanto a las funcionalidades encontramos el incremento de atributos (hambre y cansancio), modificación del
+estado de atributos (hora del día) y por último encontramos altributo llaves que en función de su valor se desbloqueará un
 final u otro.
 
 En en campo de las decisiones encontramos tres fases en las que se nos da a elegir entre tres opciones. En la primera fase de la historia 
