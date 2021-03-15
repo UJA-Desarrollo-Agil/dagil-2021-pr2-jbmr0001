@@ -1,15 +1,23 @@
-### DECEPCI”N DE ABDUCCI”N
+### DECEPCI√ìN DE ABDUCCI√ìN
 
-## DescripciÛn
-DecepciÛn de AbducciÛn es una aventura narrativa en la que un alumno de ingenieria infÛrmatica 
+## Descripci√≥n
+Decepci√≥n de Abducci√≥n es una aventura narrativa en la que un alumno de ingenieria inf√≥rmatica 
 es abducido por el protagonista de la novela de Eduardo Mendoza "Sin noticias de Gurb" en la 
-aparentemente cotidiana misiÛn de ir al supermercado. 
+aparentemente cotidiana misi√≥n de ir al supermercado. 
 
 El objetivo del juego es encontrar la mejor secuencia de deciciones que menos cansancio y hambre reporten.
-El protagonista en funciÛn de estas deciciones vivir· ciertas modificaciones en la historia como si de mundos paralelos se trataran. Adem·s 
-dependiendo si el protagonista decide dejarse las llaves o no el final de la historia ser· distinto.
+El protagonista en funci√≥n de estas deciciones vivir√° ciertas modificaciones en la historia como si de mundos paralelos se trataran. Adem√°s 
+dependiendo si el protagonista decide dejarse las llaves o no el final de la historia ser√° distinto.
 
-La historia tiene un enfoque cotidiano en primera persona con toques divertidos y algunos cammeos.
+La historia tiene un enfoque cotidiano en primera persona con toques divertidos y algunos cammeos. Cabe destacar la presencia de gran cantidad 
+de im√°genes para ayudar a la inmersi√≥n.
+
+En cuanto a las funcionalidades encontramos el incremento de atributos, como pueden ser el cansancio y el hambre. Modificaci√≥n del
+estado de atributos como lo es la hora del d√≠a y por √∫ltimo encontramos altributo llaves que en funci√≥n de su valor se desbloquear√° un
+final u otro.
+
+En en campo de las decisiones encontramos fases en las que se nos da a elegir entre tres opciones. En la primera fase de la historia 
+solo se continua con una decisi√≥n mientras que en las otras dos fases la historia se desarrolla en funci√≥n de las decisiones en una realidad u otra.
 
 ## Tablero Trello:
 https://trello.com/b/Szir0S3x/pr%C3%A1ctica-2
@@ -17,13 +25,20 @@ https://trello.com/b/Szir0S3x/pr%C3%A1ctica-2
 ## Capturas de pantalla de trello:
 
 - **Principio y primer Martes por la noche:**
+![Inicial Martes 1(Miercoles)](https://user-images.githubusercontent.com/78794703/111200139-b3ffcc00-85c1-11eb-9e3b-21ee978a1e5b.png)
 - **Segundo Martes por la noche:**
+- ![Martes 2](https://user-images.githubusercontent.com/78794703/111200219-cb3eb980-85c1-11eb-8027-ea92e21cf4a9.png)
+
 - **Tercer Martes por la noche:**
+- ![Martes 3](https://user-images.githubusercontent.com/78794703/111200241-ced24080-85c1-11eb-8fc3-9970ca795396.png)
+
 - **Final:**
 
 ## Capturas de Pantalla de Telegram:
 
 - **Bot de GitHub:**
+![18e8e2b0-73b9-4a2b-a437-63587aeed161](https://user-images.githubusercontent.com/78794703/111200090-a5b1b000-85c1-11eb-8851-29c563fb9669.jpg)
+
 
 - **Bot de Trello:**
 
