@@ -257,7 +257,11 @@ undum.game.situations = {
             },
             exit: function(character, system, to) {
                 system.setQuality("novice", 0);
+                system.setCharacterText(
+                    "<p>Hay un ovni.</p>"
+                );
             }
+            
         }
     ),
     "parado": new undum.SimpleSituation(
@@ -315,14 +319,14 @@ undum.game.situations = {
     ),
     "esconderse": new undum.SimpleSituation(
         "\
-        <p>Estás detrás de un contenedor. Han pasado 5 minutos y el ovni no parece irse\
-        Tienes mucho miedo y estas muerto de hambre. Decides moverte poco a poroc reptando por el suelo.\
-        Estás en la delgada línea entre parecer un militar o un tonto. Te das cuenta de que se te ha caido la \
-        cartera más atrás, vuelves para recojerla y el platillo volante te\
-        detecta y se mueve hacia ti. No tienes escapatoria, acaba ocurriendo lo peor. Eres abducido. Comienza la\
+        <p>Est\u00E1s detr\u00E1s de un contenedor. Han pasado 5 minutos y el ovni no parece irse\
+        Tienes mucho miedo y estas muerto de hambre.</p><p> Decides moverte poco a poco reptando por el suelo.\
+        Te encuentras en la delgada l\u00EDnea entre parecer un militar o un tonto. Te das cuenta de que se te ha caido la \
+        cartera m\u00E1s atr\u00E1s, vuelves para recojerla y el platillo volante te\
+        detecta y se mueve hacia ti.<img src='media/games/tutorial/ovni.png' class='float_left'></p><p> No tienes escapatoria, acaba ocurriendo lo peor. Eres abducido. Comienza la\
         luz verde a elevarte,\
-        aunque le cuesta más de lo normal porque estás pasado de peso.\
-        <img src='media/games/tutorial/ovni.png'</p>\
+        aunque le cuesta m\u00E1s de lo normal porque est\u00E1s pasado de peso.\
+        </p>\
         <p>Una vez dentro del ovni. Apareces dentro de una especie de jaula. <img src='media/games/tutorial/prision.png' class='float_right'>Tienes los pantalones sucios por \
         \arrastrarte por el suelo. El miedo inunda tu ser\
         <p>Se abre una puerta como en las pel\u00EDculas de la que sale una neblina que poco a poco va aumentando\
@@ -343,117 +347,118 @@ undum.game.situations = {
     ),
     "ronaldo": new undum.SimpleSituation(
         "\
-        <p>¿Por qué eres Cristiano Ronaldo? -le preguntas.</p>\
-        \<P>Nuestra especie tiene la capacidad de transformarse en cualquier persona.\
-        Hice una consulta indexada de 50 ntuplas de personas famosas de vuestro planeta en nuestra base de datos\
-        y adopte la primera apariencia que ví. -te contesta</p>\
-        <p>Mmmm...Pues para pasar desapercibido que digamos no es útil esta apariencia ¿Y que haces aquí? -le preguntas</p><img src='media/games/tutorial/alien.png' class='float_left'>\
-        <p>Es una historia muy larga, he venido a vuestro planeta en busca de un compañero\
-        Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando la apariencia\
-        de Marta Sanchez -te responde.</p>\
-        Pues ni idea, no se de quién me hablas. ¿Me puedo ir?-le contestas\
-        Sí, sin problema. ¿Donde te dejo? -te responde <a href='final2'>final 2</a>\
-        </p>",
+        <p>-\u00BFPor qu\u00E9 eres Cristiano Ronaldo? -le preguntas.</p>\
+        \<p>-Nuestra especie tiene la capacidad de transformarse en cualquier persona.\
+        <img src='media/games/tutorial/alien.png' class='float_right'></p><p> Hice una consulta indexada de 50 ntuplas de personas famosas de vuestro planeta en nuestra base de datos\
+        y adopte la primera apariencia que v\u00ED. -te contesta.</p>\
+        <p>-Mmmm...Pues para pasar desapercibido que digamos no es \u00FAtil esta apariencia \u00BFY que haces aqu\u00ED? -le preguntas</p>\
+        <p>Es una historia muy larga, he venido a vuestro planeta en busca de un compa\u00F1ero.\
+        Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando diferentes apariencias\
+        -te responde.</p>\
+        <p>-Pues ni idea, no se de qui\u00E9n me hablas. \u00BFMe puedo ir? -le contestas.</p><p>\
+        -S\u00ED, sin problema. \u00BFDonde te dejo? -te responde.\
+        </p><p><a href='final1'>En el Supersol</a> -le respondes.</p>",
         {
             heading: "El extraterreste es Cristiano Ronaldo",
             exit: function(character, system, to) {
                 system.setCharacterText(
-                    "<p>We're nearing the end of the road.</p>"
+                    "<p>El extraterreste te ha robado la cartera.</p>"
                 );
             }
         }
     ),
     "victor": new undum.SimpleSituation(
     "\
-        <p>¿Por qué eres Victor? -le preguntas.\
-        \Nuestra especie tiene la capacidad de transformarse en cualquier persona.\
-        Hice una consulta indexada de 66 ntuplas de personas en la provincia de Jaén y adopte la primera apariencia que ví. -te contesta\
-        Mmmm... que casualidad ¿Y que haces aquí? -le preguntas <img src='media/games/tutorial/alien.png' class='float_left'>\
-        Es una historia muy larga, he venido a vuestro planeta en busca de un compañero\
-        Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando la apariencia\
-        de Marta Sanchez -te responde.\
-        Pues ni idea, no se de quién me hablas. ¿Me puedo ir?-le contestas\
-         ¿Me puedo ir?-le contestas<a href='final2'>final 2</a>\
-        Sí, sin problema. ¿Donde te dejo? -te responde\
-        En el Supersol -le contestas\
-        ¡Espera! se te ha caido la cartera, tómala. -te advierte\
-        Ahh, muchas gracias. Menudo problemoón ir a comprar sin dinero...jajaj -le contestas <a href='final2'>final 2</a>\
+        <p>\u00BFPor qu\u00e9 eres Victor? -le preguntas.</p>\
+        \<p>-Nuestra especie tiene la capacidad de transformarse en cualquier persona.\
+        <img src='media/games/tutorial/alien.png' class='float_right'>Hice una consulta indexada de 66 ntuplas de personas en la provincia de Ja\u00E9n y adopte la primera apariencia que v\u00ED. -te contesta</p>\
+        <p>-Mmmm... que casualidad \u00BFY que haces aqu\u00ED? -le preguntas</p>\
+        <p>-Es una historia muy larga, he venido a vuestro planeta en busca de un compa\u00F1ero\
+        Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando \
+        diferentes apariencias. -te responde.</p>\
+        <p>-Pues ni idea, no se de qui\u00E9n me hablas.\
+         -\u00BFMe puedo ir?-le contestas</p>\
+        <p>-S\u00ED, sin problema. \u00BFDonde te dejo? -te responde</p>\
+        <p>-<a href='final2'>En el supersol.</a> -le contestas</p>\
+        <p>-\u00A1Espera! se te ha caido la cartera, t\u00F3mala. -te advierte</p>\
+        <p>-Ah, muchas gracias. Menudo problem\u00F3n ir a comprar sin dinero...jajaj -le contestas <a href='final2'>final 2</a></p>\
         </p>",
         {
-            heading: "El extraterreste es tu profesor de Desarrollo Ágil",
+            heading: "El extraterreste es tu profesor de Desarrollo \u00C1gil",
             exit: function(character, system, to) {
                 system.setCharacterText(
-                    "<p>We're nearing the end of the road.</p>"
+                    "<p>El extraterreste te ha robado la cartera.</p>"
                 );
             }
         }
     ),
     "mendoza": new undum.SimpleSituation(
         "\
-        <p>¿Por qué eres Victor? -le preguntas.\
-        \Nuestra especie tiene la capacidad de transformarse en cualquier persona.\
-        Eduardo Mendoza se forró haciendo un libro sobre mí sin darme ni un duro, ''Sin noticias de Gurb'' \
-        o algo así se llamaba...Todo mentira. Desde entonces lo tengo en la lista negra.-te contesta\
-        Pues vaya... ¿Y que haces aquí? -le preguntas <img src='media/games/tutorial/alien.png' class='float_left'>\
-        Es una historia muy larga, he venido a vuestro planeta en busca de un compañero\
-        Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando la apariencia\
-        de Marta Sanchez -te responde.\
-        Pues ni idea, no se de quién me hablas. ¿Me puedo ir?-le contestas<a href='final2'>final 2</a>\
-        Sí, sin problema. ¿Donde te dejo? -te responde\
-        En el Supersol -le contestas\
-        ¡Espera! se te ha caido la cartera, tómala. -te advierte\
-        Ahh, muchas gracias. Menudo problemoón ir a comprar sin dinero...jajaj -le contestas\
+        <p>\u00BFPor qu\u00E9 eres Eduardo Mendoza? -le preguntas.</p>\
+        \<p>-Nuestra especie tiene la capacidad de transformarse en cualquier persona.\
+        Eduardo Mendoza se forr\u00F3 haciendo un libro sobre m\u00ED sin darme ni un duro, ''Sin noticias de Gurb'' \
+        o algo as\u00ED se llamaba...</p><p>Todo mentira. Desde entonces lo tengo en la lista negra. -te contesta\
+        </p><p>-Pues vaya... \u00BFY que haces aqu\u00ED? -le preguntas <img src='media/games/tutorial/alien.png' class='float_left'>\
+        </p><p>-Es una historia muy larga, he venido a vuestro planeta en busca de un compa\u00F1ero\
+        Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando\
+        diferentes apariencias -te responde.</p>\
+        <p>-Pues ni idea, no se de qui\u00E9n me hablas. \u00BFMe puedo ir? -le contestas.</p>\
+        <p>-S\u00ED, sin problema. \u00BFDonde te dejo? -te responde</p>\
+        <p>-<a href='final2'>En el supersol.</a> -le contestas</p>\
+        <p>-\u00A1Espera! se te ha caido la cartera, t\u00F3 mala. -te advierte</p>\
+        <p>-Ah, muchas gracias. Menudo problemF3n ir a comprar sin dinero...jajaj -le contestas.\
         </p>",
        
         {
             heading: "El extraterreste es Miguel de Eduardo Mendoza",
             exit: function(character, system, to) {
                 system.setCharacterText(
-                    "<p>We're nearing the end of the road.</p>"
+                    "<p>El extraterreste te ha robado la cartera.</p>"
                 );
             }
         }
     ),
     final1: new undum.SimpleSituation(
-        "<p>Te depides de tu nuevo amigo alien. Quieres pararte a twitearlo pero\
-        tu hambres urge más. <img src='media/games/tutorial/supermercado.png' class='float_left'> Te diriges hacia la lontana puerta del supermercado y\
+        "<p>Te despides de tu nuevo amigo alien. Quieres pararte a twitearlo pero\
+        tu hambres urge m\u00E1s. <img src='media/games/tutorial/supermercado.png' class='float_left'> </p><p>Te diriges hacia la lontana puerta del supermercado y\
         recorres esos largos pasillos. A lo lejos ves tu ansiada recompensa, el tomate\
-        frito. Si te paras a pensarlo parece un poco subrealista lo que te acaba de pasar.\
-        Pero por fin estás en la caja, metes la mano en el bolsillo y...\
-        No está la cartera. \
-        Algunas palabras irreproducibles salen de tu boca mientras te quedas mirando al infinito.\
+        frito.</p><p> Si te paras a pensarlo parece un poco subrealista lo que te acaba de pasar.\
+        Pero por fin est\u00E1s en la caja, metes la mano en el bolsillo y...\
+        Sacas la cartera pero est\u00E1 vac\u00EDa. \
+        </p><p>Algunas palabras irreproducibles salen de tu boca mientras te quedas mirando al infinito.\
         \
-        Un extraterreste te ha robado\
-        la cartera. <img src='media/games/tutorial/cartera.png' class='float_right'> Finalmente sigues el camino de vuelta a casa con las manos vacías y sin ganas de comer.\
+        Un extraterreste te ha desvalijado la cartera.\
+        <img src='media/games/tutorial/cartera.png' class='float_right'></p><p>Finalmente sigues el camino de vuelta a casa con las manos vac\u00EDas y sin ganas de comer.\
         \
-        FIN\
+        <b></b>FIN\
         </p>",
         {
             
-            heading: "Un alienígena te deja en el uperSol",
+            heading: "Un alien\u00EDgena te deja en el uperSol",
             
         }
     ),
     final2: new undum.SimpleSituation(
-        "<p>Te depides de tu nuevo amigo alien. Quieres pararte a twitearlo pero\
-        tu hambres urge más. <img src='media/games/tutorial/supermercado.png' class='float_left'>Te diriges hacia la lontana puerta del supermercado y\
+        "<p>Te despides de tu nuevo amigo alien. Quieres pararte a twitearlo pero\
+        tu hambres urge m\u00E1s. <img src='media/games/tutorial/supermercado.png' class='float_left'></p><p>\
+        Te diriges hacia la lontana puerta del supermercado y\
         recorres esos largos pasillos. A lo lejos ves tu ansiada recompensa, el tomate\
-        frito. Si te paras a pensarlo parece un poco subrealista lo que te acaba de pasar.\
-        Pero por fin estás en la caja, metes la mano en el bolsillo y...\
-        No está la cartera. \
-        Algunas palabras irreproducibles salen de tu boca mientras te quedas mirando al infinito.\
+        frito.</p><p>Si te paras a pensarlo parece un poco subrealista lo que te acaba de pasar.\
+        Pero por fin est\u00E1s en la caja, metes la mano en el bolsillo y...</p>\
+        <p>Sacas la cartera pero est\u00E1 vac\u00EDa. \
+        Algunas palabras irreproducibles salen de tu boca mientras te quedas mirando al infinito.</p>\
         \
-        Un extraterreste te ha robado\
-        la cartera. <img src='media/games/tutorial/cartera.png' class='float_right'>Finalmente sigues el camino de vuelta a casa con las manos vacías y sin ganas de comer.\
-        Te dispones a abrir la puerta y...¡Lo que te faltaba! Se te han caido las llaves que guardabas\
-        en tu bolsillo izquierdo cuando estabas huyendo. Te has quedao sin comer y fuera de casa.\
+        <p>Un extraterreste te ha desvalijado la cartera.\
+        <img src='media/games/tutorial/cartera.png' class='float_right'>Finalmente sigues el camino de vuelta a casa con las manos vac\u00EDas y sin ganas de comer.\
+        </p><p>Te dispones a abrir la puerta y...</p><p>\u00A1Lo que te faltaba! Se te han caido las llaves que guardabas\
+        en tu bolsillo izquierdo cuando estabas huyendo.</p><p> Te has quedao sin comer y fuera de casa.\
+        \<p></p>\
         \
-        \
-        FIN\
+        <b>FIN</b>\
         </p>",
         {
             
-            heading: "Un alienígena te deja en el SuperSol",
+            heading: "Un alien\u00EDgena te deja en el SuperSol",
             
         }
     ),
