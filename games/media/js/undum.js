@@ -491,10 +491,9 @@
      */
     var FudgeAdjectivesQuality = function(title, opts) {
         WordScaleQuality.call(this, title, [
-            "terrible".l(), "poor".l(), "mediocre".l(),
-            "fair".l(), "good".l(), "great".l(), "superb".l()
+            "olvidadas".l(), "no olvidadas".l()
         ], opts);
-        if (!('offset' in opts)) this.offset = -3;
+        if (!('offset' in opts)) this.offset = 0;
     };
     FudgeAdjectivesQuality.inherits(WordScaleQuality);
 
