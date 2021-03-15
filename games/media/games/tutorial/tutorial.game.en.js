@@ -97,6 +97,7 @@ undum.game.situations = {
                     "<p>14:05 PM</p>"
                 );
                  system.setQuality("hambre", character.qualities.hambre+2);
+
    
             }
         }
