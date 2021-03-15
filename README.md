@@ -46,7 +46,7 @@ https://trello.com/b/Szir0S3x/pr%C3%A1ctica-2
 
 
 - **Bot de Trello:**
-![image](https://user-images.githubusercontent.com/78794703/111202305-00e4a200-85c4-11eb-90a3-f715b5d1657f.png)
+
 ![image](https://user-images.githubusercontent.com/78794703/111201322-efe76100-85c2-11eb-8341-363ea290d003.png)
 
 
