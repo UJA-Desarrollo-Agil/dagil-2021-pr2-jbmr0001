@@ -152,11 +152,11 @@ undum.game.situations = {
             },
             actions: {
                 "olvidar": function(character, system, action) {
-                    system.setQuality("luck", character.qualities.luck+1);
+                    system.setQuality("luck", character.qualities.luck-1);
                     
                 },
                 "noolvidar": function(character, system, action) {
-                    system.setQuality("luck", character.qualities.luck-1);
+                    system.setQuality("luck", character.qualities.luck+1);
                 }
             },
         }
@@ -226,7 +226,6 @@ undum.game.situations = {
                 }
             },
             exit: function(character, system, to) {
-                system.setQuality("novice", 0);
                 system.setQuality("cansancio", character.qualities.cansancio+1);
                 system.setCharacterText(
                     "<p>14:22 PM</p>"
@@ -325,7 +324,7 @@ undum.game.situations = {
     /* Escenas 3  */
     "ronaldo": new undum.SimpleSituation(
         "\
-        <p>-\u00BFPor qu\u00E9 eres Cristiano Ronaldo? -le preguntas.</p>\
+        <p>\u00BFPor qu\u00E9 eres Cristiano Ronaldo? -le preguntas.</p>\
         \<p>-Nuestra especie tiene la capacidad de transformarse en cualquier persona.\
         <img src='media/games/tutorial/alien.png' class='float_right'></p><p> Hice una consulta indexada de 50 ntuplas de personas famosas de vuestro planeta en nuestra base de datos\
         y adopte la primera apariencia que v\u00ED. -te contesta.</p>\
@@ -333,9 +332,14 @@ undum.game.situations = {
         <p>Es una historia muy larga, he venido a vuestro planeta en busca de un compa\u00F1ero.\
         Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando diferentes apariencias\
         -te responde.</p>\
-        <p>-Pues ni idea, no se de qui\u00E9n me hablas. \u00BFMe puedo ir? -le contestas.</p><p>\
-        -S\u00ED, sin problema. \u00BFDonde te dejo? -te responde.\
-        </p><p><a href='menufinal'>En el Supersol</a> -le respondes.</p>",
+         <p>-Pues ni idea, no se de qui\u00E9n me hablas.\
+         -\u00BFMe puedo ir? -le contestas.</p>\
+        <p>-S\u00ED, sin problema. \u00BFDonde te dejo? -te responde.</p>\
+        <p>-En el supersol. -le contestas.</p>\
+        <p>Justo antes de abandonar el platillo volante:</p>\
+        <p>-\u00A1Espera! se te ha caido la cartera, t\u00F3mala. -te advierte.</p>\
+        <p>-Ah, muchas gracias. Menudo problem\u00F3n ir <a href='menufinal'> a comprar </a> sin dinero...jaja -le contestas.</p>\
+        </p>",
         {
             heading: "El extraterreste es Cristiano Ronaldo",
             exit: function(character, system, to) {
@@ -351,17 +355,18 @@ undum.game.situations = {
     "\
         <p>\u00BFPor qu\u00e9 eres Victor? -le preguntas.</p>\
         \<p>-Nuestra especie tiene la capacidad de transformarse en cualquier persona.\
-        <img src='media/games/tutorial/alien.png' class='float_right'>Hice una consulta indexada de 66 ntuplas de personas en la provincia de Ja\u00E9n y adopte la primera apariencia que v\u00ED. -te contesta</p>\
-        <p>-Mmmm... que casualidad \u00BFY que haces aqu\u00ED? -le preguntas</p>\
+        <img src='media/games/tutorial/alien.png' class='float_right'>Hice una consulta indexada de 66 ntuplas de personas en la provincia de Ja\u00E9n y adopte la primera apariencia que v\u00ED. -te contesta.</p>\
+        <p>-Mmmm... que casualidad \u00BFY que haces aqu\u00ED? -le preguntas.</p>\
         <p>-Es una historia muy larga, he venido a vuestro planeta en busca de un compa\u00F1ero\
         Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando \
         diferentes apariencias. -te responde.</p>\
         <p>-Pues ni idea, no se de qui\u00E9n me hablas.\
-         -\u00BFMe puedo ir?-le contestas</p>\
-        <p>-S\u00ED, sin problema. \u00BFDonde te dejo? -te responde</p>\
-        <p>-<a href='menufinal'>En el supersol.</a> -le contestas</p>\
-        <p>-\u00A1Espera! se te ha caido la cartera, t\u00F3mala. -te advierte</p>\
-        <p>-Ah, muchas gracias. Menudo problem\u00F3n ir a comprar sin dinero...jajaj -le contestas <a href='final2'>final 2</a></p>\
+         -\u00BFMe puedo ir? -le contestas.</p>\
+        <p>-S\u00ED, sin problema. \u00BFDonde te dejo? -te responde.</p>\
+        <p>-En el supersol. -le contestas.</p>\
+        <p>Justo antes de abandonar el platillo volante:</p>\
+        <p>-\u00A1Espera! se te ha caido la cartera, t\u00F3mala. -te advierte.</p>\
+        <p>-Ah, muchas gracias. Menudo problem\u00F3n ir <a href='menufinal'> a comprar </a> sin dinero...jaja -le contestas.</p>\
         </p>",
         {
             heading: "El extraterreste es tu profesor de Desarrollo \u00C1gil",
@@ -384,13 +389,14 @@ undum.game.situations = {
         </p><p>-Es una historia muy larga, he venido a vuestro planeta en busca de un compa\u00F1ero\
         Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando\
         diferentes apariencias -te responde.</p>\
-        <p>-Pues ni idea, no se de qui\u00E9n me hablas. \u00BFMe puedo ir? -le contestas.</p>\
-        <p>-S\u00ED, sin problema. \u00BFDonde te dejo? -te responde</p>\
-        <p>-<a href='menufinal'>En el supersol.</a> -le contestas</p>\
-        <p>-\u00A1Espera! se te ha caido la cartera, t\u00F3 mala. -te advierte</p>\
-        <p>-Ah, muchas gracias. Menudo problemF3n ir a comprar sin dinero...jajaj -le contestas.\
+        <p>-Pues ni idea, no se de qui\u00E9n me hablas. \
+        -\u00BFMe puedo ir? -le contestas.</p>\
+        <p>-S\u00ED, sin problema. \u00BFDonde te dejo? -te responde.</p>\
+        <p>-En el supersol. -le contestas.</p>\
+        <p>Justo antes de abandonar el platillo volante:</p>\
+        <p>-\u00A1Espera! se te ha caido la cartera, t\u00F3mala. -te advierte.</p>\
+        <p>-Ah, muchas gracias. Menudo problem\u00F3n ir <a href='menufinal'> a comprar </a> sin dinero...jaja -le contestas.</p>\
         </p>",
-       
         {
             heading: "El extraterreste es Miguel de Eduardo Mendoza",
             exit: function(character, system, to) {
@@ -415,7 +421,7 @@ undum.game.situations = {
         El extraterreste te ha desvalijado la cartera antes de d\u00E1rtela.\
         <img src='media/games/tutorial/cartera.png' class='float_right'></p><p>Finalmente llegas a casa con las manos vac\u00EDas y hambriento. Abres\
         la puerta, vas a la concina y te comes los macarrones sin tomate.\
-        <b></b>FIN\
+        <p><b>FIN</b>\
         </p>",
         {
             
@@ -439,7 +445,7 @@ undum.game.situations = {
         \
         El extraterreste te ha desvalijado la cartera antes de d\u00E1rtela.</p><p>\
         <img src='media/games/tutorial/cartera.png' class='float_right'>Finalmente sigues el camino de vuelta a casa con las manos vac\u00EDas.\
-        </p><p>Te dispones a abrir la puerta y...</p><p>\u00A1Lo que te faltaba! Te has dejado las llaves dentro de casa</p><p> Te has quedao sin comer y fuera de casa.\
+        </p><p>Te dispones a abrir la puerta y...</p><p>\u00A1Lo que te faltaba! Te has dejado las llaves dentro de casa. Te has quedao sin comer y fuera de casa.\
         \<p></p>\
         \
         <b>FIN</b>\
@@ -450,61 +456,7 @@ undum.game.situations = {
             
         }
     ),
-    progress: new undum.SimpleSituation(
-        "<p>Sometimes you want to make the change in a quality into a more\
-        significant event. You can do this by animating the change in\
-        quality. If you <a href='./boost-hambre-action'>boost your\
-        hambre</a>, you will see the hambre change in the normal\
-        way in the character panel. But you will also see a progress\
-        bar appear and animate below.</p>",
-        {
-            tags: ["topiSc"],
-            heading: "Showing a Progress Bara",
-            displayOrder: 5,
-            actions: {
-                // I'm going indirect here - the link carries out an
-                // action, which then uses doLink to directly change
-                // the situation.  This isn't the recommended way (I
-                // could have just changed situation in the link), but
-                // it illustrates the use of doLink.
-                "boost-hambre-action": function(character, system, action) {
-                    system.doLink("boost-hambre");
-                }
-            },
-            exit: function(character, system, to) {
-                system.animateQuality(
-                    'hambre', character.qualities.hambre+1
-                );
-            }
-        }
-    ),
-    
-    "boost-hambre": new undum.SimpleSituation(
-        "<p>\
-        <img src='media/games/tutorial/woodcut3.png' class='float_right'>\
-        The progress bar is also useful in situations where the\
-        character block is displaying just the whole number of a quality,\
-        whereas some action changes a fraction. If the quality is displaying\
-        the character's level, for example, you might want to show a progress\
-        bar to indicate how near the character is to levelling up.</p>\
-        \
-        <p>After a few seconds, the progress bar disappears, to keep the\
-        focus on the text. Undum isn't designed for games where a lot of\
-        statistic management is needed. If you want a change to be part\
-        of the permanent record of the game, then write it in text.</p>\
-        \
-        <p>Let's <a href='hub'>return to the topic list.</a></p>"
-        ),
-    // Again, we'll retrieve the text we want from the HTML file.
-    "saving": new undum.Situation({
-        enter: function(character, system, from) {
-            system.write($("#s_saving").html());
-        },
-        tags: ["topisc"],
-        displayOrder: 6,
-        optionText: "Saving and Loading"
-    }),
-
+   
      "menufinal": new undum.SimpleSituation(
         "<p></p>",
         {
@@ -573,13 +525,6 @@ undum.game.qualities = {
     luck: new undum.FudgeAdjectivesQuality( // Fudge as in the FUDGE RPG
         "<span title='cansancio, hambre and Luck are reverently borrowed from the Fighting Fantasy series of gamebooks. The words representing Luck are from the FUDGE RPG. This tooltip is illustrating that you can use any HTML in the label for a quality (in this case a span containing a title attribute).'>Llaves</span>",
         {priority:"0001", group:'stats'}
-    ),
-
-    inspiration: new undum.NonZeroIntegerQuality(
-        "Inspiration", {priority:"0001", group:'progress'}
-    ),
-    novice: new undum.OnOffQuality(
-        "Novice", {priority:"0002", group:'progress', onDisplay:"&#10003;"}
     )
 };
 
@@ -601,7 +546,5 @@ undum.game.init = function(character, system) {
     character.qualities.cansancio = 5;
     character.qualities.hambre = 5;
     character.qualities.luck = 0;
-    character.qualities.novice = 1;
-    character.qualities.inspiration = 0;
     system.setCharacterText("<p></p>");
 };
