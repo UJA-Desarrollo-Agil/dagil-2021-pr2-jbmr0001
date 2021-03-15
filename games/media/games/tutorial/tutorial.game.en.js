@@ -49,7 +49,7 @@ undum.game.situations = {
                     system.setQuality("luck", character.qualities.luck-1);
                 },
                 "potencia-cansancio": function(character, system, action) {
-                    system.setQuality("hambre", character.qualities.hambre+1);
+                    system.setQuality("cansancio", character.qualities.cansancio+1);
                 }
             },
             exit: function(character, system, to) {
@@ -106,7 +106,7 @@ undum.game.situations = {
         "<p>Aunque aparenta ser un atentado contra la salud p\u00FAblica\
         parece una buena soluci\u00F3n. Sin embargo recuerdas que casualemte\
         no te gusta el ketchup. Algo por dentro de dice que deber\u00EDas \
-        <a href='hub'>tomar una mejor decisi\u00F3n</a>\</p>"
+        <a href='hub'>tomar una mejor decisi\u00F3n.</a>\</p>"
         ,
         {
             heading: "Macarrones con ketchup",
@@ -210,10 +210,6 @@ undum.game.situations = {
         <p>Hay gente que se <a href='parado'>queda parada por p\u00E1nico</a>, otra sin embargo \
         <a href='correr'>sale corriendo</a> o <a href='esconderse'>trata de esconderse</a>.\
         \
-        \
-        <a href='./luck-boost'>a</a> or\
-        <a href='./luck-reduce'>b</a>\
-        \
         <p>",
         {
         heading: "Al girarte",
@@ -273,8 +269,8 @@ undum.game.situations = {
         luz verde a elevarte,\
         aunque le cuesta m\u00E1s de lo normal porque est\u00E1s pasado de peso.\
         </p>\
-        <p>Una vez dentro del ovni. Apareces dentro de una especie de jaula. <img src='media/games/tutorial/prision.png' class='float_right'>La rodilla te duele un mont\u00F3n\
-        \y el miedo inunda tu ser. </p>\
+        <p>Una vez dentro del ovni. Apareces dentro de una especie de jaula. <img src='media/games/tutorial/prision.png' class='float_right'>\
+        \El miedo inunda tu ser. </p>\
         <p>Se abre una puerta como en las pel\u00EDculas de la que sale una neblina que poco a poco va aumentando\
         \de tama\u00F1o.</p><p> Aparece la silueta de un humano, qu\u00E9 raro pensabas que los aliens eran m\u00E1s peque\u00F1os.\
         <img src='media/games/tutorial/silueta.png' class='float_left'></p>\
@@ -294,7 +290,7 @@ undum.game.situations = {
     ),
     "esconderse": new undum.SimpleSituation(
         "\
-        <p>Est\u00E1s detr\u00E1s de un contenedor. Han pasado 5 minutos y el ovni no parece irse\
+        <p>Est\u00E1s detr\u00E1s de un contenedor. Han pasado 5 minutos y el ovni no parece irse.\
         Tienes mucho miedo y estas muerto de hambre.</p><p> Decides moverte poco a poco reptando por el suelo.\
         Te encuentras en la delgada l\u00EDnea entre parecer un militar o un tonto. Te das cuenta de que se te ha caido la \
         cartera m\u00E1s atr\u00E1s, vuelves para recojerla y el platillo volante te\
@@ -326,7 +322,7 @@ undum.game.situations = {
         "\
         <p>\u00BFPor qu\u00E9 eres Cristiano Ronaldo? -le preguntas.</p>\
         \<p>-Nuestra especie tiene la capacidad de transformarse en cualquier persona.\
-        <img src='media/games/tutorial/alien.png' class='float_right'></p><p> Hice una consulta indexada de 50 ntuplas de personas famosas de vuestro planeta en nuestra base de datos\
+        <img src='media/games/tutorial/alien.png' class='float_right'> Hice una consulta indexada de 50 ntuplas de personas famosas de vuestro planeta en nuestra base de datos\
         y adopte la primera apariencia que v\u00ED. -te contesta.</p>\
         <p>-Mmmm...Pues para pasar desapercibido que digamos no es \u00FAtil esta apariencia \u00BFY que haces aqu\u00ED? -le preguntas</p>\
         <p>Es una historia muy larga, he venido a vuestro planeta en busca de un compa\u00F1ero.\
@@ -335,7 +331,7 @@ undum.game.situations = {
          <p>-Pues ni idea, no se de qui\u00E9n me hablas.\
          -\u00BFMe puedo ir? -le contestas.</p>\
         <p>-S\u00ED, sin problema. \u00BFDonde te dejo? -te responde.</p>\
-        <p>-En el supersol. -le contestas.</p>\
+        <p>-En el Carrefour. -le contestas.</p>\
         <p>Justo antes de abandonar el platillo volante:</p>\
         <p>-\u00A1Espera! se te ha caido la cartera, t\u00F3mala. -te advierte.</p>\
         <p>-Ah, muchas gracias. Menudo problem\u00F3n ir <a href='menufinal'> a comprar </a> sin dinero...jaja -le contestas.</p>\
@@ -355,7 +351,7 @@ undum.game.situations = {
     "\
         <p>\u00BFPor qu\u00e9 eres Victor? -le preguntas.</p>\
         \<p>-Nuestra especie tiene la capacidad de transformarse en cualquier persona.\
-        <img src='media/games/tutorial/alien.png' class='float_right'>Hice una consulta indexada de 66 ntuplas de personas en la provincia de Ja\u00E9n y adopte la primera apariencia que v\u00ED. -te contesta.</p>\
+        <img src='media/games/tutorial/alien.png' class='float_right'>Hice una consulta indexada de 66 ntuplas de personas en la provincia de Ja\u00E9n y adopt\u00E9 la primera apariencia que v\u00ED. -te contesta.</p>\
         <p>-Mmmm... que casualidad \u00BFY que haces aqu\u00ED? -le preguntas.</p>\
         <p>-Es una historia muy larga, he venido a vuestro planeta en busca de un compa\u00F1ero\
         Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando \
@@ -363,7 +359,7 @@ undum.game.situations = {
         <p>-Pues ni idea, no se de qui\u00E9n me hablas.\
          -\u00BFMe puedo ir? -le contestas.</p>\
         <p>-S\u00ED, sin problema. \u00BFDonde te dejo? -te responde.</p>\
-        <p>-En el supersol. -le contestas.</p>\
+        <p>-En el Carrefour. -le contestas.</p>\
         <p>Justo antes de abandonar el platillo volante:</p>\
         <p>-\u00A1Espera! se te ha caido la cartera, t\u00F3mala. -te advierte.</p>\
         <p>-Ah, muchas gracias. Menudo problem\u00F3n ir <a href='menufinal'> a comprar </a> sin dinero...jaja -le contestas.</p>\
@@ -384,7 +380,7 @@ undum.game.situations = {
         <p>\u00BFPor qu\u00E9 eres Eduardo Mendoza? -le preguntas.</p>\
         \<p>-Nuestra especie tiene la capacidad de transformarse en cualquier persona.\
         Eduardo Mendoza se forr\u00F3 haciendo un libro sobre m\u00ED sin darme ni un duro, ''Sin noticias de Gurb'' \
-        o algo as\u00ED se llamaba...</p><p>Todo mentira. Desde entonces lo tengo en la lista negra. -te contesta\
+        o algo as\u00ED se llamaba...</p><p>Todo mentira. Desde entonces lo tengo en la lista negra. -te contesta.\
         </p><p>-Pues vaya... \u00BFY que haces aqu\u00ED? -le preguntas <img src='media/games/tutorial/alien.png' class='float_left'>\
         </p><p>-Es una historia muy larga, he venido a vuestro planeta en busca de un compa\u00F1ero\
         Concretamente estoy buscando a Gurb, desaparecido en vuestro planeta adoptando\
@@ -392,13 +388,13 @@ undum.game.situations = {
         <p>-Pues ni idea, no se de qui\u00E9n me hablas. \
         -\u00BFMe puedo ir? -le contestas.</p>\
         <p>-S\u00ED, sin problema. \u00BFDonde te dejo? -te responde.</p>\
-        <p>-En el supersol. -le contestas.</p>\
+        <p>-En el Carrefour. -le contestas.</p>\
         <p>Justo antes de abandonar el platillo volante:</p>\
         <p>-\u00A1Espera! se te ha caido la cartera, t\u00F3mala. -te advierte.</p>\
         <p>-Ah, muchas gracias. Menudo problem\u00F3n ir <a href='menufinal'> a comprar </a> sin dinero...jaja -le contestas.</p>\
         </p>",
         {
-            heading: "El extraterreste es Miguel de Eduardo Mendoza",
+            heading: "El extraterreste es Eduardo Mendoza",
             exit: function(character, system, to) {
                 system.setCharacterText(
                     "<p>14:15 PM</p>"
@@ -425,7 +421,7 @@ undum.game.situations = {
         </p>",
         {
             
-            heading: "Final 1: Un alien\u00EDgena te deja en el SuperSol",
+            heading: "Final 1: Un alien\u00EDgena te deja en el Carrefour",
             
             canView: function(character, system, host) {
                 return character.qualities.hambre > 0;
@@ -446,13 +442,13 @@ undum.game.situations = {
         El extraterreste te ha desvalijado la cartera antes de d\u00E1rtela.</p><p>\
         <img src='media/games/tutorial/cartera.png' class='float_right'>Finalmente sigues el camino de vuelta a casa con las manos vac\u00EDas.\
         </p><p>Te dispones a abrir la puerta y...</p><p>\u00A1Lo que te faltaba! Te has dejado las llaves dentro de casa. Te has quedao sin comer y fuera de casa.\
-        \<p></p>\
+        \<p>\
         \
         <b>FIN</b>\
         </p>",
         {
             
-            heading: "Final 2: Un alien\u00EDgena te deja en el SuperSol",
+            heading: "Final 2: Un alien\u00EDgena te deja en el Carrefour",
             
         }
     ),
