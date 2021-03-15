@@ -341,7 +341,7 @@ undum.game.situations = {
             heading: "El extraterreste es Cristiano Ronaldo",
             exit: function(character, system, to) {
                 system.setCharacterText(
-                    "<p>13:10 PM</p>"
+                    "<p>15:10 PM</p>"
                 );
                 system.setQuality("hambre", character.qualities.hambre+1);
                 system.setQuality("cansancio", character.qualities.cansancio+2);
@@ -369,7 +369,7 @@ undum.game.situations = {
             heading: "El extraterreste es tu profesor de Desarrollo \u00C1gil",
             exit: function(character, system, to) {
                 system.setCharacterText(
-                    "<p>13:10 PM</p>"
+                    "<p>15:12 PM</p>"
                 );
                 system.setQuality("hambre", character.qualities.hambre+3);
                 system.setQuality("cansancio", character.qualities.cansancio+1);
@@ -398,7 +398,7 @@ undum.game.situations = {
             heading: "El extraterreste es Eduardo Mendoza",
             exit: function(character, system, to) {
                 system.setCharacterText(
-                    "<p>14:15 PM</p>"
+                    "<p>15:15 PM</p>"
                 );
                 system.setQuality("hambre", character.qualities.hambre+2);
                 system.setQuality("cansancio", character.qualities.cansancio+4);
@@ -407,7 +407,7 @@ undum.game.situations = {
     ),
     /* Escenas 4 */
     final1: new undum.SimpleSituation(
-        "<p>Te despides de tu nuevo amigo alien. Quieres pararte a twitearlo pero\
+        "<p>Te despides de tu nuevo amigo alien. Quieres pararte a tuitearlo pero\
         tu hambres urge m\u00E1s. <img src='media/games/tutorial/supermercado.png' class='float_left'> </p><p>Te diriges hacia la lontana puerta del supermercado y\
         recorres esos largos pasillos. A lo lejos ves tu ansiado objetivo, el tomate\
         frito.</p><p> Si te paras a pensarlo parece un poco subrealista lo que te acaba de pasar.\
@@ -431,7 +431,7 @@ undum.game.situations = {
         }
     ),
     final2: new undum.SimpleSituation(
-        "<p>Te despides de tu nuevo amigo alien. Quieres pararte a twitearlo pero\
+        "<p>Te despides de tu nuevo amigo alien. Quieres pararte a tuitearlo pero\
         tu hambres urge m\u00E1s. <img src='media/games/tutorial/supermercado.png' class='float_left'></p><p>\
         Te diriges hacia la lontana puerta del supermercado y\
         recorres esos largos pasillos. A lo lejos ves tu ansiado objetivo, el tomate\
