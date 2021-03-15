@@ -31,16 +31,27 @@ undum.game.situations = {
     inicio: new undum.SimpleSituation(
         "<h1>Hora de comer</h1>\
         <img src='media/games/tutorial/tenedor.png' class='float_right'>\
-        <p>Son las dos de la tarde, una hora menos en Canarias. Est\u00E1s exhausto\
+        <p>Son las dos de la tarde, una hora menos en Canarias. Est\u00E1s <a href='./potencia-cansancio'>exhausto</a>\
         tras una maratoniana jornada de trabajo implementando la pr\u00E1ctica 2 de\
         Desarrollo \u00C1gil.</p>\
         \
         <p>Vas a la cocina y decides demostrar tus dotes de chef realizando\
         unos macarrones con tomate.</p>\
         \
-        <p>Tras cocer los macarrones y echarlos en la sarten. \u00A1Sorpresa! \
-        no hay <a href='hub'>tomate frito.</a>",
+        <p>Tras cocer los macarrones y echarlos en la sart\u00E9n. \u00A1Sorpresa! \
+        no hay <a href='hub'>tomate frito.</p>",
         {
+            actions: {
+                "luck-boost": function(character, system, action) {
+                    system.setQuality("luck", character.qualities.luck+1);
+                },
+                "luck-reduce": function(character, system, action) {
+                    system.setQuality("luck", character.qualities.luck-1);
+                },
+                "potencia-cansancio": function(character, system, action) {
+                    system.setQuality("hambre", character.qualities.hambre+1);
+                }
+            },
             exit: function(character, system, to) {
                 system.setCharacterText(
                     "<p>14:00 PM</p>"
@@ -73,10 +84,6 @@ undum.game.situations = {
     sintomate: new undum.SimpleSituation(
         "<p>Aunque tienes tanta hambre que te comer\u00EDas un Mamut, misteriosamente te apetece m\u00E1s <a href='comprar'>ir de compras</a>. Adem\u00E1s\
         te puede ser \u00FAtil el paseo para despejar la mente y seguir trabajando la pr\u00E1ctica de Desarrollo \u00C0gil esta tarde. </p>\
-         \
-        <p></p>\
-        \
-        <p></p>\
         \
         <p class='transient'>\
         \
@@ -120,17 +127,16 @@ undum.game.situations = {
         }
     ),
     comprar: new undum.SimpleSituation(
-        "<p>Parece una buena decisi\u00F3n. Intentas asegurarte de \
-        no olvidar las llaves tocando tu bolsillo derecho.\
+        "<p>Parece una buena decisi\u00F3n ir al supermecado.\
         </p>\
         \
         <img src='media/games/tutorial/casa.png' class='float_left'>\
-        <p>Cierras la puerta, bajas las escaleras y cuando est\u00E1s a punto de salir te das\
+        <p>Cuando est\u00E1s a punto de cerrar la puerta y salir te das\
         de que te has dejado la cartera dentro.\
         <p>\
         \
         <p>Vuelves a subir y tras 5 minutos busc\u00E1ndola la encuentras\
-        dentro de la mochila. Finalmente por fin sales de casa\
+        dentro de la mochila. <a href='./olvidar'>Te dejas</a> o <a href='./noolvidar'> no te dejas</a> las llaves en casa. Finalmente por fin sales de casa\
         y te <a href='calle'>dirijes hacia el supermercado</a>.</p>",
         {
             tags: ["topic"],
@@ -143,7 +149,16 @@ undum.game.situations = {
                  system.setQuality("cansancio", character.qualities.cansancio+2);
                  system.setQuality("hambre", character.qualities.hambre+1);
    
-            }
+            },
+            actions: {
+                "olvidar": function(character, system, action) {
+                    system.setQuality("luck", character.qualities.luck+1);
+                    
+                },
+                "noolvidar": function(character, system, action) {
+                    system.setQuality("luck", character.qualities.luck-1);
+                }
+            },
         }
     ),
     
@@ -320,7 +335,7 @@ undum.game.situations = {
         -te responde.</p>\
         <p>-Pues ni idea, no se de qui\u00E9n me hablas. \u00BFMe puedo ir? -le contestas.</p><p>\
         -S\u00ED, sin problema. \u00BFDonde te dejo? -te responde.\
-        </p><p><a href='final1'>En el Supersol</a> -le respondes.</p>",
+        </p><p><a href='menufinal'>En el Supersol</a> -le respondes.</p>",
         {
             heading: "El extraterreste es Cristiano Ronaldo",
             exit: function(character, system, to) {
@@ -344,7 +359,7 @@ undum.game.situations = {
         <p>-Pues ni idea, no se de qui\u00E9n me hablas.\
          -\u00BFMe puedo ir?-le contestas</p>\
         <p>-S\u00ED, sin problema. \u00BFDonde te dejo? -te responde</p>\
-        <p>-<a href='final2'>En el supersol.</a> -le contestas</p>\
+        <p>-<a href='menufinal'>En el supersol.</a> -le contestas</p>\
         <p>-\u00A1Espera! se te ha caido la cartera, t\u00F3mala. -te advierte</p>\
         <p>-Ah, muchas gracias. Menudo problem\u00F3n ir a comprar sin dinero...jajaj -le contestas <a href='final2'>final 2</a></p>\
         </p>",
@@ -371,7 +386,7 @@ undum.game.situations = {
         diferentes apariencias -te responde.</p>\
         <p>-Pues ni idea, no se de qui\u00E9n me hablas. \u00BFMe puedo ir? -le contestas.</p>\
         <p>-S\u00ED, sin problema. \u00BFDonde te dejo? -te responde</p>\
-        <p>-<a href='final2'>En el supersol.</a> -le contestas</p>\
+        <p>-<a href='menufinal'>En el supersol.</a> -le contestas</p>\
         <p>-\u00A1Espera! se te ha caido la cartera, t\u00F3 mala. -te advierte</p>\
         <p>-Ah, muchas gracias. Menudo problemF3n ir a comprar sin dinero...jajaj -le contestas.\
         </p>",
@@ -391,20 +406,24 @@ undum.game.situations = {
     final1: new undum.SimpleSituation(
         "<p>Te despides de tu nuevo amigo alien. Quieres pararte a twitearlo pero\
         tu hambres urge m\u00E1s. <img src='media/games/tutorial/supermercado.png' class='float_left'> </p><p>Te diriges hacia la lontana puerta del supermercado y\
-        recorres esos largos pasillos. A lo lejos ves tu ansiada recompensa, el tomate\
+        recorres esos largos pasillos. A lo lejos ves tu ansiado objetivo, el tomate\
         frito.</p><p> Si te paras a pensarlo parece un poco subrealista lo que te acaba de pasar.\
-        Pero por fin est\u00E1s en la caja, metes la mano en el bolsillo y...\
-        Sacas la cartera pero est\u00E1 vac\u00EDa. \
+        Pero por fin est\u00E1s en la caja, metes la mano en el bolsillo y\
+        sacas la cartera pero est\u00E1 vac\u00EDa... \
         </p><p>Algunas palabras irreproducibles salen de tu boca mientras te quedas mirando al infinito.\
         \
-        Un extraterreste te ha desvalijado la cartera.\
-        <img src='media/games/tutorial/cartera.png' class='float_right'></p><p>Finalmente sigues el camino de vuelta a casa con las manos vac\u00EDas y sin ganas de comer.\
-        \
+        El extraterreste te ha desvalijado la cartera antes de d\u00E1rtela.\
+        <img src='media/games/tutorial/cartera.png' class='float_right'></p><p>Finalmente llegas a casa con las manos vac\u00EDas y hambriento. Abres\
+        la puerta, vas a la concina y te comes los macarrones sin tomate.\
         <b></b>FIN\
         </p>",
         {
             
-            heading: "Un alien\u00EDgena te deja en el uperSol",
+            heading: "Final 1: Un alien\u00EDgena te deja en el SuperSol",
+            
+            canView: function(character, system, host) {
+                return character.qualities.hambre > 0;
+            }
             
         }
     ),
@@ -412,23 +431,22 @@ undum.game.situations = {
         "<p>Te despides de tu nuevo amigo alien. Quieres pararte a twitearlo pero\
         tu hambres urge m\u00E1s. <img src='media/games/tutorial/supermercado.png' class='float_left'></p><p>\
         Te diriges hacia la lontana puerta del supermercado y\
-        recorres esos largos pasillos. A lo lejos ves tu ansiada recompensa, el tomate\
+        recorres esos largos pasillos. A lo lejos ves tu ansiado objetivo, el tomate\
         frito.</p><p>Si te paras a pensarlo parece un poco subrealista lo que te acaba de pasar.\
-        Pero por fin est\u00E1s en la caja, metes la mano en el bolsillo y...</p>\
-        <p>Sacas la cartera pero est\u00E1 vac\u00EDa. \
-        Algunas palabras irreproducibles salen de tu boca mientras te quedas mirando al infinito.</p>\
+        Pero por fin est\u00E1s en la caja, metes la mano en el bolsillo y\
+        sacas la cartera pero est\u00E1 vac\u00EDa. \
+        Algunas palabras irreproducibles salen de tu boca mientras te quedas mirando al infinito.\
         \
-        <p>Un extraterreste te ha desvalijado la cartera.\
-        <img src='media/games/tutorial/cartera.png' class='float_right'>Finalmente sigues el camino de vuelta a casa con las manos vac\u00EDas y sin ganas de comer.\
-        </p><p>Te dispones a abrir la puerta y...</p><p>\u00A1Lo que te faltaba! Se te han caido las llaves que guardabas\
-        en tu bolsillo izquierdo cuando estabas huyendo.</p><p> Te has quedao sin comer y fuera de casa.\
+        El extraterreste te ha desvalijado la cartera antes de d\u00E1rtela.</p><p>\
+        <img src='media/games/tutorial/cartera.png' class='float_right'>Finalmente sigues el camino de vuelta a casa con las manos vac\u00EDas.\
+        </p><p>Te dispones a abrir la puerta y...</p><p>\u00A1Lo que te faltaba! Te has dejado las llaves dentro de casa</p><p> Te has quedao sin comer y fuera de casa.\
         \<p></p>\
         \
         <b>FIN</b>\
         </p>",
         {
             
-            heading: "Un alien\u00EDgena te deja en el SuperSol",
+            heading: "Final 2: Un alien\u00EDgena te deja en el SuperSol",
             
         }
     ),
@@ -487,95 +505,54 @@ undum.game.situations = {
         optionText: "Saving and Loading"
     }),
 
-    "implicit-boost": new undum.SimpleSituation(
-        "<p>Your luck has been boosted<span class='transient'>, check the\
-        list of options to see if they have changed</span>.</p>",
+     "menufinal": new undum.SimpleSituation(
+        "<p></p>",
         {
             tags: ["example"],
             enter: function(character, system, from) {
-                system.animateQuality("luck", character.qualities.luck+1)
                 system.doLink('example-choices');
             },
-            optionText: "Boost Your Luck",
+            optionText: "ELECCI\u00D3N DE FINAL:",
             displayOrder: 1,
-            canView: function(character, system, host) {
-                return character.qualities.luck < 4;
-            }
-        }
-    ),
-    "implicit-drop": new undum.SimpleSituation(
-        "<p>Your luck has been reduced<span class='transient'>, check the\
-        list of options to see if they have changed</span>.</p>",
-        {
-            tags: ["example"],
-            enter: function(character, system, from) {
-                system.animateQuality("luck", character.qualities.luck-1)
-                system.doLink('example-choices');
-            },
-            optionText: "Reduce Your Luck",
-            displayOrder: 2,
-            canView: function(character, system, host) {
-                return character.qualities.luck > -4;
-            }
-        }
-    ),
-    "high-luck-only": new undum.SimpleSituation(
-        "<p>Your luck is higher than 'fair'. The link to this \
-        situation would not\
-        have appeared if it were lower.</p>",
-        {
-            tags: ["example"],
-            enter: function(character, system, from) {
-                system.doLink('example-choices');
-            },
-            optionText: "High Luck Option",
-            displayOrder: 3,
-            canView: function(character, system, host) {
+            canChoose: function(character, system, host) {
                 return character.qualities.luck > 0;
             }
         }
     ),
-    "low-luck-only": new undum.SimpleSituation(
-        "<p>Your luck is lower than 'fair'. The link to this situation \
-        appears whether\
-        it is low or high, but can only be chosen if it is low. It does this\
-        by defining a <em>canChoose</em> method.</p>",
+
+    "llavesnoolvidadas": new undum.SimpleSituation(
+        "<p></p>",
         {
             tags: ["example"],
             enter: function(character, system, from) {
-                system.doLink('example-choices');
+                system.doLink('final1');
             },
-            optionText: "Low Luck Option (requires low luck to be clickable)",
-            displayOrder: 3,
+            optionText: "Final 1 (No te has dejado las llaves en casa)",
+            displayOrder: 2,
             canChoose: function(character, system, host) {
-                return character.qualities.luck < 0;
+                return character.qualities.luck > 0;
             }
         }
     ),
 
-    "last": new undum.SimpleSituation(
-        "<h1>Where to Go Now</h1>\
-        <p>So that's it. We've covered all of Undum. This situation is the\
-        end, because it has no further links. The 'The End' message is\
-        just in the HTML output of this situation, it isn't anything special\
-        to Undum</p>\
-        \
-        <p>I've added an\
-        inspiration quality to your character list. Its time for you to\
-        crack open the game file and write your own story.</p>\
-        <h1>The End</h1>",
+   
+
+    "llavesolvidadas": new undum.SimpleSituation(
+        "<p></p>",
         {
-            tags: ["topisc"],
-            optionText: "Finish the Tutorial",
-            displayOrder: 8,
+            tags: ["example"],
             enter: function(character, system, from) {
-                system.setQuality("inspiration", 1);
-                system.setCharacterText(
-                    "<p>You feel all inspired, why not have a go?</p>"
-                );
+                system.doLink('final2');
+            },
+            optionText: "Final 2 (Te has dejado las llaves en casa)",
+            displayOrder: 3,
+            canChoose: function(character, system, host) {
+                return character.qualities.luck <= 0;
             }
         }
-    )
+    ),
+    
+
 };
 
 // ---------------------------------------------------------------------------
@@ -588,14 +565,14 @@ undum.game.start = "inicio";
  * that quality will never show up in the character bar in the UI. */
 undum.game.qualities = {
     cansancio: new undum.IntegerQuality(
-        "Cansacio", {priority:"0001", group:'stats'}
+        "Cansacio", {priority:"0002", group:'stats'}
     ),
     hambre: new undum.NumericQuality(
-        "Hambre", {priority:"0002", group:'stats'}
+        "Hambre", {priority:"0003", group:'stats'}
     ),
     luck: new undum.FudgeAdjectivesQuality( // Fudge as in the FUDGE RPG
-        "<span title='cansancio, hambre and Luck are reverently borrowed from the Fighting Fantasy series of gamebooks. The words representing Luck are from the FUDGE RPG. This tooltip is illustrating that you can use any HTML in the label for a quality (in this case a span containing a title attribute).'>Luck</span>",
-        {priority:"0003", group:'stats'}
+        "<span title='cansancio, hambre and Luck are reverently borrowed from the Fighting Fantasy series of gamebooks. The words representing Luck are from the FUDGE RPG. This tooltip is illustrating that you can use any HTML in the label for a quality (in this case a span containing a title attribute).'>Llaves</span>",
+        {priority:"0001", group:'stats'}
     ),
 
     inspiration: new undum.NonZeroIntegerQuality(
