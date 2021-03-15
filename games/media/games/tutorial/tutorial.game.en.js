@@ -408,7 +408,7 @@ undum.game.situations = {
     /* Escenas 4 */
     final1: new undum.SimpleSituation(
         "<p>Te despides de tu nuevo amigo alien. Quieres pararte a tuitearlo pero\
-        tu hambres urge m\u00E1s. <img src='media/games/tutorial/supermercado.png' class='float_left'> </p><p>Te diriges hacia la lontana puerta del supermercado y\
+        tu hambre urge m\u00E1s. <img src='media/games/tutorial/supermercado.png' class='float_left'> </p><p>Te diriges hacia la lontana puerta del supermercado y\
         recorres esos largos pasillos. A lo lejos ves tu ansiado objetivo, el tomate\
         frito.</p><p> Si te paras a pensarlo parece un poco subrealista lo que te acaba de pasar.\
         Pero por fin est\u00E1s en la caja, metes la mano en el bolsillo y\
@@ -432,7 +432,7 @@ undum.game.situations = {
     ),
     final2: new undum.SimpleSituation(
         "<p>Te despides de tu nuevo amigo alien. Quieres pararte a tuitearlo pero\
-        tu hambres urge m\u00E1s. <img src='media/games/tutorial/supermercado.png' class='float_left'></p><p>\
+        tu hambre urge m\u00E1s. <img src='media/games/tutorial/supermercado.png' class='float_left'></p><p>\
         Te diriges hacia la lontana puerta del supermercado y\
         recorres esos largos pasillos. A lo lejos ves tu ansiado objetivo, el tomate\
         frito.</p><p>Si te paras a pensarlo parece un poco subrealista lo que te acaba de pasar.\
