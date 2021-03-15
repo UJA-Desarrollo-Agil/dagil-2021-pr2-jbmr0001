@@ -1,7 +1,7 @@
 ### DECEPCIÓN DE ABDUCCIÓN
 
 ## Descripción
-Decepción de Abducción es una aventura narrativa en la que un alumno de ingenieria infórmatica 
+Decepción de Abducción es una aventura narrativa en la que un alumno de Ingeniería Informática 
 es abducido por el protagonista de la novela de Eduardo Mendoza "Sin noticias de Gurb" en la 
 aparentemente cotidiana misión de ir al supermercado. 
 
@@ -33,6 +33,8 @@ https://trello.com/b/Szir0S3x/pr%C3%A1ctica-2
 - ![Martes 3](https://user-images.githubusercontent.com/78794703/111200241-ced24080-85c1-11eb-8fc3-9970ca795396.png)
 
 - **Final:**
+- ![Captura de pantalla (24)](https://user-images.githubusercontent.com/78794703/111200965-9121e780-85c2-11eb-84d8-447103427902.png)
+
 
 ## Capturas de Pantalla de Telegram:
 
@@ -41,5 +43,8 @@ https://trello.com/b/Szir0S3x/pr%C3%A1ctica-2
 
 
 - **Bot de Trello:**
+- ![image](https://user-images.githubusercontent.com/78794703/111201139-c2021c80-85c2-11eb-9ae8-7f468193a0cb.png)
+![image](https://user-images.githubusercontent.com/78794703/111201322-efe76100-85c2-11eb-8341-363ea290d003.png)
+
 
 
