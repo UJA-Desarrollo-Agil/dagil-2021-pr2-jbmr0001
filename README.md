@@ -30,13 +30,13 @@ https://trello.com/b/Szir0S3x/pr%C3%A1ctica-2
 - **Inicial y primer Martes (Miércoles):**
 ![Inicial Martes 1(Miercoles)](https://user-images.githubusercontent.com/78794703/111200139-b3ffcc00-85c1-11eb-9e3b-21ee978a1e5b.png)
 - **Segundo Martes por la noche:**
-- ![Martes 2](https://user-images.githubusercontent.com/78794703/111200219-cb3eb980-85c1-11eb-8027-ea92e21cf4a9.png)
+![Martes 2](https://user-images.githubusercontent.com/78794703/111200219-cb3eb980-85c1-11eb-8027-ea92e21cf4a9.png)
 
 - **Tercer Martes por la noche:**
-- ![Martes 3](https://user-images.githubusercontent.com/78794703/111200241-ced24080-85c1-11eb-8fc3-9970ca795396.png)
+![Martes 3](https://user-images.githubusercontent.com/78794703/111200241-ced24080-85c1-11eb-8fc3-9970ca795396.png)
 
 - **Final:**
-- ![Captura de pantalla (24)](https://user-images.githubusercontent.com/78794703/111200965-9121e780-85c2-11eb-84d8-447103427902.png)
+![Captura de pantalla (24)](https://user-images.githubusercontent.com/78794703/111200965-9121e780-85c2-11eb-84d8-447103427902.png)
 
 
 ## Capturas de Pantalla de Telegram:
@@ -46,7 +46,7 @@ https://trello.com/b/Szir0S3x/pr%C3%A1ctica-2
 
 
 - **Bot de Trello:**
-- ![image](https://user-images.githubusercontent.com/78794703/111201139-c2021c80-85c2-11eb-9ae8-7f468193a0cb.png)
+![image](https://user-images.githubusercontent.com/78794703/111201139-c2021c80-85c2-11eb-9ae8-7f468193a0cb.png)
 ![image](https://user-images.githubusercontent.com/78794703/111201322-efe76100-85c2-11eb-8341-363ea290d003.png)
 
 
